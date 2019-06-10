@@ -72,7 +72,15 @@ class SiteWrapper extends Component {
         copyright: (
           <React.Fragment>
             Copyright © {new Date().getFullYear()}
-            <a href="https://twitter.com/franklin_chieze"> Franklin Chieze</a>. Theme by
+            <a href="https://twitter.com/franklin_chieze"> Franklin Chieze</a> | Template by
+            <a
+              href="http://tabler-react.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              tabler-react.com
+            </a> | Theme by
             <a
               href="https://codecalm.net"
               target="_blank"
@@ -80,7 +88,7 @@ class SiteWrapper extends Component {
             >
               {" "}
               codecalm.net
-            </a>{" "}
+            </a>{" "} |
             All rights reserved.
           </React.Fragment>
         ),
