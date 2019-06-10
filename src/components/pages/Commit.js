@@ -1,6 +1,8 @@
 import React from 'react';
 
 import SiteWrapper from '../layouts/SiteWrapper';
+import treeData from '../../data/commit';
+import TreeView from '../TreeView';
 
 import {
   Page,
@@ -25,7 +27,9 @@ function Commit() {
   return (<SiteWrapper>
     <Page.Content title="Commit">
       <Grid.Row>
-        <Grid.Col md={12} xl={12}>ok</Grid.Col>
+        <Grid.Col md={12} xl={12}>
+          <TreeView data={treeData} />
+        </Grid.Col>
       </Grid.Row>
     </Page.Content>
   </SiteWrapper>);
