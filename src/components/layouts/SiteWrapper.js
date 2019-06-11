@@ -41,7 +41,24 @@ const navBarItems = [{
   icon: "git-merge",
   LinkComponent: withRouter(NavLink),
   useExact: true,
-}]
+}, {
+  value: "More",
+  icon: "more-vertical",
+  subItems: [
+    {
+      value: "Support",
+      to: "/support",
+      icon: "heart",
+      LinkComponent: withRouter(NavLink),
+    },
+    {
+      value: "Privacy",
+      to: "/privacy",
+      icon: "shield",
+      LinkComponent: withRouter(NavLink),
+    },
+  ],
+},]
 
 class SiteWrapper extends Component {
   state = {}
@@ -54,7 +71,7 @@ class SiteWrapper extends Component {
         imageURL: "../images/logo.svg",
         navItems: (<Nav.Item type="div" className="d-none d-md-flex">
           <Button
-            href="https://github.com/Chieze-Franklin/prlint-bot"
+            href="https://github.com/Chieze-Franklin/ghapy-bot"
             target="_blank"
             outline
             size="sm"
@@ -106,7 +123,7 @@ class SiteWrapper extends Component {
             </Grid.Col>
             <Grid.Col auto={true}>
               <Button
-                href="https://github.com/Chieze-Franklin/prlint-bot"
+                href="https://github.com/Chieze-Franklin/ghapy-bot"
                 size="sm"
                 outline
                 color="primary"
