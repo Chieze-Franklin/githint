@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SiteWrapper from '../layouts/SiteWrapper';
-import treeData from '../../data/commit';
+import treeData from '../../data/branch';
 import TreeView from '../TreeView';
 
 import {
@@ -23,7 +23,7 @@ import {
   Badge,
 } from 'tabler-react';
 
-function Commit() {
+function Branch() {
   return (<SiteWrapper>
     <Page.Content>
       <Grid.Row>
@@ -35,4 +35,4 @@ function Commit() {
   </SiteWrapper>);
 }
 
-export default Commit;
+export default Branch;

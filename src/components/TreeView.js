@@ -3,7 +3,7 @@ import TreeMenu from 'react-simple-tree-menu';
 
 function TreeView(props) {
   const matchSearch = ({key, searchTerm}) => {
-    return new RegExp(searchTerm).test(key);
+    return new RegExp(searchTerm.replace('[', '\\[')).test(key);
   };
   const onClickItem = (props) => {
     // console.log(props)

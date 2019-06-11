@@ -101,6 +101,32 @@ export default [
         label: 'comment_count',
         example: '0'
       },
+      {
+        key: 'commit.commit.verification',
+        label: 'verification',
+        nodes: [
+          {
+            key: 'commit.commit.verification.verified',
+            label: 'verified',
+            example: 'false'
+          },
+          {
+            key: 'commit.commit.verification.reason',
+            label: 'reason',
+            example: '"unsigned"'
+          },
+          {
+            key: 'commit.commit.verification.signature',
+            label: 'signature',
+            example: 'null'
+          },
+          {
+            key: 'commit.commit.verification.payload',
+            label: 'payload',
+            example: 'null'
+          },
+        ],
+      },
     ]
   },
 ];
