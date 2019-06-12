@@ -1,38 +1,24 @@
 import React from 'react';
 
 import SiteWrapper from '../layouts/SiteWrapper';
-import treeData from '../../data/commit';
+import treeData from '../../data';
 import TreeView from '../TreeView';
 
 import {
   Page,
-  Avatar,
-  Icon,
   Grid,
-  Card,
-  Text,
-  Table,
-  Alert,
-  Progress,
-  colors,
-  Dropdown,
-  Button,
-  StampCard,
-  StatsCard,
-  ProgressCard,
-  Badge,
 } from 'tabler-react';
 
-function Commit() {
+function Directory(props) {
   return (<SiteWrapper>
     <Page.Content>
       <Grid.Row>
         <Grid.Col md={12} xl={12}>
-          <TreeView data={treeData} />
+          <TreeView data={treeData[props.object]} />
         </Grid.Col>
       </Grid.Row>
     </Page.Content>
   </SiteWrapper>);
 }
 
-export default Commit;
+export default Directory;
