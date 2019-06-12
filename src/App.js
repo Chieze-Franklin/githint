@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import ConfigPage from "./components/pages/Config";
 import DirectoryPage from "./components/pages/Directory";
 import HomePage from "./components/pages/Home";
 
@@ -12,15 +13,16 @@ function App() {
     <Provider store={store}>
       <React.StrictMode>
         <Router>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/branch" render={props => {
-            return (<DirectoryPage object="branch" />)
-          }} />
-          <Route exact path="/commit" render={props => {
-            return (<DirectoryPage object="commit" />)
-          }} />
-        </Switch>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/config" component={ConfigPage} />
+            <Route exact path="/branch" render={props => {
+              return (<DirectoryPage object="branch" />)
+            }} />
+            <Route exact path="/commit" render={props => {
+              return (<DirectoryPage object="commit" />)
+            }} />
+          </Switch>
         </Router>
       </React.StrictMode>
     </Provider>

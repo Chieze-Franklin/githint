@@ -1,3 +1,5 @@
+// Icons: https://feathericons.com/
+
 import React, { Component } from 'react';
 import { NavLink, withRouter } from "react-router-dom";
 
@@ -15,6 +17,12 @@ const navBarItems = [{
   value: "Home",
   to: "/",
   icon: "home",
+  LinkComponent: withRouter(NavLink),
+  useExact: true,
+}, {
+  value: "Configuration",
+  to: "/config",
+  icon: "file-text",
   LinkComponent: withRouter(NavLink),
   useExact: true,
 }, {

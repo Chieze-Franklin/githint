@@ -7,31 +7,18 @@ import SiteWrapper from '../layouts/SiteWrapper';
 
 import {
   Page,
-  // Avatar,
-  // Icon,
   Grid,
   Card,
-  // Text,
-  // Table,
-  // Alert,
-  // Progress,
-  // colors,
-  // Dropdown,
-  // Button,
-  // StampCard,
-  // StatsCard,
-  // ProgressCard,
-  // Badge,
 } from "tabler-react";
 
-function Home(props) {
+function Config(props) {
   return (<SiteWrapper>
     <Page.Content>
       <Grid.Row>
         <Grid.Col md={12} xl={12}>
           <Card>
             <Card.Header>
-              <Card.Title>Introduction</Card.Title>
+              <Card.Title>The {props.appConfig} file</Card.Title>
             </Card.Header>
             <Card.Body>
               <p>
@@ -75,4 +62,4 @@ const mapStateToProps = state => ({
   appName: state.app.name
 });
 
-export default connect(mapStateToProps, null)(Home);
+export default connect(mapStateToProps, null)(Config);

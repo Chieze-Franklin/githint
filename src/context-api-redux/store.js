@@ -4,7 +4,8 @@ import reducer from './reducers';
 
 const initialState = {
   app: {
-    name: 'Ghint'
+    config: '.ghint',
+    name: 'Ghint',
   },
   searchTerms: {
     branch: ''
