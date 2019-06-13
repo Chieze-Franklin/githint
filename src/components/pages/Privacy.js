@@ -11,27 +11,30 @@ import {
   Card,
 } from "tabler-react";
 
-function Config(props) {
+function Privacy(props) {
   return (<SiteWrapper>
     <Page.Content>
       <Grid.Row>
         <Grid.Col md={12} xl={12}>
           <Card>
             <Card.Header>
-              <Card.Title>The {props.appConfig} file</Card.Title>
+              <Card.Title>Privacy</Card.Title>
             </Card.Header>
             <Card.Body>
               <p>
-                To start using {props.appName}, first install the
-                {" "}<a href="https://github.com/marketplace/ghint-bot" target="_blank" rel="noopener noreferrer">
-                  {props.appName} GitHub app
-                </a>{" "}
-                on your repository and
-                add a {props.appConfig} file to the root directory of the repository.
+                {props.appName} ensures that your pull requests follow specified conventions.
               </p>
               <p>
-                The {props.appConfig} file is a JSON file which specifies what checks are to be performed,
-                and how they are to be performed.
+                There are conventions that may not be easily checked with tools like ESLint or Hound CI.
+                These could range from arbitrary checks like{" "}
+                <code>
+                  A pull request must be raised by a user whose first name is not more than 6 characters long
+                </code>
+                {" "}to more practical checks like{" "}
+                <code>
+                  A pull request must have at least 2 review comments
+                </code>
+                .{" "}{props.appName} thrives on checking these kinds of conventions.
               </p>
               <p>
                 {props.appName} fetches metadata about pull requests, commits, branches, trees, and passes the
@@ -59,4 +62,4 @@ const mapStateToProps = state => ({
   appName: state.app.name
 });
 
-export default connect(mapStateToProps, null)(Config);
+export default connect(mapStateToProps, null)(Privacy);

@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ConfigPage from "./components/pages/Config";
 import DirectoryPage from "./components/pages/Directory";
 import HomePage from "./components/pages/Home";
+import PrivacyPage from "./components/pages/Privacy";
+import SupportPage from "./components/pages/Support";
 
 import { Provider } from './context-api-redux';
 import store from './context-api-redux/store';
@@ -22,6 +24,8 @@ function App() {
             <Route exact path="/commit" render={props => {
               return (<DirectoryPage object="commit" />)
             }} />
+            <Route exact path="/privacy" component={PrivacyPage} />
+            <Route exact path="/support" component={SupportPage} />
           </Switch>
         </Router>
       </React.StrictMode>

@@ -5,6 +5,7 @@ const keyStyle = {
   color: 'blue'
 }
 const getValueStyle = (value) => {
+  value = value.toString();
   if (value.startsWith('"')) {
     return {
       color: 'brown'
@@ -26,7 +27,7 @@ const getValueStyle = (value) => {
 
 function TreeView(props) {
   const locale = ({label, example}) => {
-    return example ?
+    return typeof example !== 'undefined' ?
       <div>
         <span style={keyStyle}>{label}</span>:{" "}
         <span style={getValueStyle(example)}>{example}</span>
