@@ -333,7 +333,8 @@ export default [
             key: 'commit.files[0].filename|commit.files.0.filename',
             label: 'filename',
             example: '"file1.txt"'
-          },{
+          },
+          {
             key: 'commit.files[0].additions|commit.files.0.additions',
             label: 'additions',
             example: '10'

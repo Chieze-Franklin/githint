@@ -38,6 +38,9 @@ function Home(props) {
                 {props.appName} ensures that your pull requests follow specified conventions.
               </p>
               <p>
+                <img src="../images/screenshots/passing-tests.png" alt="" />
+              </p>
+              <p>
                 There are conventions that may not be easily checked with tools like ESLint or Hound CI.
                 These could range from arbitrary checks like{" "}
                 <code>

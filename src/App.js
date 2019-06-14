@@ -24,6 +24,9 @@ function App() {
             <Route exact path="/commit" render={props => {
               return (<DirectoryPage object="commit" />)
             }} />
+            <Route exact path="/tree" render={props => {
+              return (<DirectoryPage object="tree" />)
+            }} />
             <Route exact path="/privacy" component={PrivacyPage} />
             <Route exact path="/support" component={SupportPage} />
           </Switch>
