@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 import { connect } from '../../context-api-redux';
 
@@ -120,7 +121,7 @@ function Config(props) {
                 <Icon prefix="fe" name="target" /> An <code>Object</code> which holds the code to execute
                 in its <code>script</code> field and the message to show to the user in the
                 <code>message</code> field. The <code>script</code> field can be either a
-                <code>String</code> ot a <code>String Array</code>, and follows the same rules explained
+                <code>String</code> or a <code>String Array</code>, and follows the same rules explained
                 above. The <code>message</code> field holds the message to be shown to the user
                 (irrespective of the outcome of the check).<br />
                 Example:
@@ -158,7 +159,8 @@ function Config(props) {
                 The code snippets for the checks are executed as Node-compatible JavaScript source code.
               </p>
               <p>
-                Before execution of the checks, {props.appName} ensures it can find the {props.appConfig} file.
+                Before execution of the checks, {props.appName} ensures it can find the {props.appConfig} file
+                in the root directory of the repository.
                 If the {props.appConfig} file cannot be found or successfully read, the built-in check
                 {" "}<code>Ghint: check for {props.appConfig} file</code> will fail.<br />
                 If this happens ensure the {props.appConfig} file exists and is a valid JSON document.
@@ -168,19 +170,116 @@ function Config(props) {
                 starts running check suites once a commit is made to a repository (even before a pull request
                 is created), there may be no pull request when the checks are executed. If no pull request can
                 be found the built-in check <code>Ghint: check for pull request</code> will fail.<br />
-                If this happens simply <em>re-run</em> the check.
+                If this happens simply <em>re-run</em> the failed check.<br />
+                For more info on this issue and how to handle it, see
+                {" "}<a href="https://github.com/Chieze-Franklin/ghint-bot/issues/11">here</a>.
               </p>
               <p>
-                {props.appName} fetches metadata about pull requests, commits, branches, trees, and passes the
-                metadata to user-defined scripts for evaluation. Such scripts are expected to return
-                {" "}<code>true</code> or <code>false</code> to determine if a pull request is ready to be merged.
+                The code snippets for the checks have access to the following (runtime-generated) objects:
+                {" "}<code>branch</code>, <code>commit</code>, <code>pull</code>, <code>tree</code>.
+              </p>
+            </Card.Body>
+          </Card>
+        </Grid.Col>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Col xs={12} sm={12} md={6} lg={6} xl={3}>
+          <Card>
+            <Card.Header>
+              <Card.Title>branch</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              <p>
+                A <a href="https://help.github.com/en/articles/about-branches">branch</a> is used to
+                isolate development work without affecting existing and ongoing work.
               </p>
               <p>
-                To start using {props.appName}, first install the
-                {" "}<a href="https://github.com/marketplace/ghint-bot" target="_blank" rel="noopener noreferrer">
-                  {props.appName} GitHub app
-                </a>{" "}
-                on your repository and
+                The <code>branch</code> object holds information like the name of the branch (<code>branch.name</code>)
+                and if the branch is protected (<code>branch.protected</code>).
+              </p>
+              <hr />
+              <p>
+                <Icon prefix="fe" name="link" /> <Link to="/branch">branch object directory</Link><br />
+                <Icon prefix="fe" name="link" /> <a href="https://developer.github.com/v3/repos/branches/#get-branch">
+                  get branch (GitHub API)</a>
+              </p>
+            </Card.Body>
+          </Card>
+        </Grid.Col>
+        <Grid.Col xs={12} sm={12} md={6} lg={6} xl={3}>
+          <Card>
+            <Card.Header>
+              <Card.Title>commit</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              <p>
+                A <a href="https://help.github.com/en/articles/github-glossary#commit">commit</a> is an
+                individual change to a file  (or set of files).
+              </p>
+              <p>
+                The <code>commit</code> object holds information like the unique hash of the commit
+                (<code>commit.sha</code>) and the files modified in the commit (<code>commit.files</code>).
+              </p>
+              <hr />
+              <p>
+                <Icon prefix="fe" name="link" /> <Link to="/commit">commit object directory</Link><br />
+                <Icon prefix="fe" name="link" /> <a href="https://developer.github.com/v3/repos/commits/#get-a-single-commit">
+                  get commit (GitHub API)</a>
+              </p>
+            </Card.Body>
+          </Card>
+        </Grid.Col>
+        <Grid.Col xs={12} sm={12} md={6} lg={6} xl={3}>
+          <Card>
+            <Card.Header>
+              <Card.Title>pull</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              <p>
+                A <a href="https://help.github.com/en/articles/about-pull-requests">pull request</a> lets
+                you tell others about changes you've pushed to a branch in a repository on GitHub.
+              </p>
+              <p>
+                The <code>pull</code> object holds information like the Github username of the user who
+                raised the pull request (<code>pull.user.login</code>) and if the pull request has been
+                closed (<code>pull.state</code>).
+              </p>
+              <p>
+                Note that the <code>pull</code> object may be undefined the first time checks are run.<br />
+                For more info on this issue and how to handle it, see
+                {" "}<a href="https://github.com/Chieze-Franklin/ghint-bot/issues/11">here</a>.
+              </p>
+              <hr />
+              <p>
+                <Icon prefix="fe" name="link" /> <Link to="/pull">pull object directory</Link><br />
+                <Icon prefix="fe" name="link" /> <a href="https://developer.github.com/v3/pulls/#get-a-single-pull-request">
+                  get pull request (GitHub API)</a>
+              </p>
+            </Card.Body>
+          </Card>
+        </Grid.Col>
+        <Grid.Col xs={12} sm={12} md={6} lg={6} xl={3}>
+          <Card>
+            <Card.Header>
+              <Card.Title>tree</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              <p>
+                A Git <a href="https://git-scm.com/book/en/v1/Git-Internals-Git-Objects#Tree-Objects">tree</a> object
+                creates the hierarchy between files in a Git repository.
+              </p>
+              <p>
+                The <code>tree</code> object holds information like the files in a branch
+                (<code>tree.tree</code>) and if GitHub was able to return all files in the branch
+                (<code>tree.truncated</code>).
+              </p>
+              <hr />
+              <p>
+                <Icon prefix="fe" name="link" /> <Link to="/tree">tree object directory</Link><br />
+                <Icon prefix="fe" name="link" /> <a href="https://developer.github.com/v3/git/trees/#get-a-tree">
+                  get tree (GitHub API)</a><br />
+                <Icon prefix="fe" name="link" /> <a href="https://developer.github.com/v3/git/trees/#get-a-tree-recursively">
+                  get tree (including nested files and folders) (GitHub API)</a>
               </p>
             </Card.Body>
           </Card>
