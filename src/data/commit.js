@@ -209,12 +209,12 @@ export default [
           {
             key: 'commit.commit.verification.signature',
             label: 'signature',
-            example: '"-----BEGIN PGP SIGNATURE-----\n\nranDOm+sTuFF=\n=l4y8\n-----END PGP SIGNATURE-----\n"'
+            example: '"-----BEGIN PGP SIGNATURE-----\\n\\nranDOm+sTuFF=\\n=l4y8\\n-----END PGP SIGNATURE-----\\n"'
           },
           {
             key: 'commit.commit.verification.payload',
             label: 'payload',
-            example: '"tree 6dcb09b5b57875f334f61aebed695e2e4193db5e\nparent 6dcb09b5b57875f334f61aebed695e2e4193db5e\nauthor Monalisa Octocat <support@github.com> 1 +0100\ncommitter GitHub <noreply@github.com> 1560004413 +0100\n\nFix all the bugs"'
+            example: '"tree 6dcb09b5b57875f334f61aebed695e2e4193db5e\\nparent 6dcb09b5b57875f334f61aebed695e2e4193db5e\\nauthor Monalisa Octocat <support@github.com> 1 +0100\\ncommitter GitHub <noreply@github.com> 1560004413 +0100\\n\\nFix all the bugs"'
           },
         ],
       },
@@ -372,7 +372,7 @@ export default [
           {
             key: 'commit.files[0].patch|commit.files.0.patch',
             label: 'patch',
-            example: '"@@ -29,7 +29,7 @@\n....."'
+            example: '"@@ -29,7 +29,7 @@\\n....."'
           },
         ]
       },

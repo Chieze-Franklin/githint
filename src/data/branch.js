@@ -173,7 +173,7 @@ export default [
           {
             key: 'branch.commit.commit.message',
             label: 'message',
-            example: '"Merge pull request #6 from Spaceghost/patch-1\n\nNew line at end of file."'
+            example: '"Merge pull request #6 from Spaceghost/patch-1\\n\\nNew line at end of file."'
           },
           {
             key: 'branch.commit.commit.tree',
@@ -213,12 +213,12 @@ export default [
               {
                 key: 'branch.commit.commit.verification.signature',
                 label: 'signature',
-                example: 'null'
+                example: '"-----BEGIN PGP SIGNATURE-----\\n\\nranDOm+sTuFF=\\n=l4y8\\n-----END PGP SIGNATURE-----\\n"'
               },
               {
                 key: 'branch.commit.commit.verification.payload',
                 label: 'payload',
-                example: 'null'
+                example: '"tree b4eecafa9be2f2006ce1b709d6857b07069b4608\\nparent 553c2077f0edc3d5dc5d17262f6aa498e69d6f8e\\nauthor The Octocat <support@github.com> 1 +0100\\ncommitter The Octocat <support@github.com> 1560004413 +0100\\n\\nMerge pull request #6 from Spaceghost/patch-1\\n\\nNew line at end of file."'
               },
             ],
           },
