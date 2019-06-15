@@ -121,6 +121,108 @@ export default [
     ]
   },
   {
+    key: 'pull.assignees',
+    label: 'assignees',
+    nodes: [
+      {
+        key: 'pull.assignees[0]|pull.assignees.0',
+        label: '0',
+        nodes: [
+          {
+            key: 'pull.assignees[0].login|pull.assignees.0.login',
+            label: 'login',
+            example: '"hubot"'
+          },
+          {
+            key: 'pull.assignees[0].id|pull.assignees.0.id',
+            label: 'id',
+            example: '1'
+          },
+          {
+            key: 'pull.assignees[0].node_id|pull.assignees.0.node_id',
+            label: 'node_id',
+            example: '"MDQ6VXNlcjE="'
+          },
+          {
+            key: 'pull.assignees[0].avatar_url|pull.assignees.0.avatar_url',
+            label: 'avatar_url',
+            example: '"https://github.com/images/error/hubot_happy.gif"'
+          },
+          {
+            key: 'pull.assignees[0].events_url|pull.assignees.0.events_url',
+            label: 'events_url',
+            example: '"https://api.github.com/users/hubot/events{/privacy}"'
+          },
+          {
+            key: 'pull.assignees[0].followers_url|pull.assignees.0.followers_url',
+            label: 'followers_url',
+            example: '"https://api.github.com/users/hubot/followers"'
+          },
+          {
+            key: 'pull.assignees[0].following_url|pull.assignees.0.following_url',
+            label: 'following_url',
+            example: '"https://api.github.com/users/hubot/following{/other_user}"'
+          },
+          {
+            key: 'pull.assignees[0].gists_url|pull.assignees.0.gists_url',
+            label: 'gists_url',
+            example: '"https://api.github.com/users/hubot/gists{/gist_id}"'
+          },
+          {
+            key: 'pull.assignees[0].gravatar_id|pull.assignees.0.gravatar_id',
+            label: 'gravatar_id',
+            example: '""'
+          },
+          {
+            key: 'pull.assignees[0].html_url|pull.assignees.0.html_url',
+            label: 'html_url',
+            example: '"https://github.com/hubot"'
+          },
+          {
+            key: 'pull.assignees[0].organizations_url|pull.assignees.0.organizations_url',
+            label: 'organizations_url',
+            example: '"https://api.github.com/users/hubot/orgs"'
+          },
+          {
+            key: 'pull.assignees[0].received_events_url|pull.assignees.0.received_events_url',
+            label: 'received_events_url',
+            example: '"https://api.github.com/users/hubot/received_events"'
+          },
+          {
+            key: 'pull.assignees[0].repos_url|pull.assignees.0.repos_url',
+            label: 'repos_url',
+            example: '"https://api.github.com/users/hubot/repos"'
+          },
+          {
+            key: 'pull.assignees[0].site_admin|pull.assignees.0.site_admin',
+            label: 'site_admin',
+            example: 'false'
+          },
+          {
+            key: 'pull.assignees[0].starred_url|pull.assignees.0.starred_url',
+            label: 'starred_url',
+            example: '"https://api.github.com/users/hubot/starred{/owner}{/repo}"'
+          },
+          {
+            key: 'pull.assignees[0].subscriptions_url|pull.assignees.0.subscriptions_url',
+            label: 'subscriptions_url',
+            example: '"https://api.github.com/users/hubot/subscriptions"'
+          },
+          {
+            key: 'pull.assignees[0].type|pull.assignees.0.type',
+            label: 'type',
+            example: '"User"'
+          },
+          {
+            key: 'pull.assignees[0].url|pull.assignees.0.url',
+            label: 'url',
+            example: '"https://api.github.com/users/hubot"'
+          },
+        ]
+      }
+    ]
+  },
+  {
     key: 'pull.body',
     label: 'body',
     example: '"Please pull these awesome changes"'
@@ -403,6 +505,175 @@ export default [
     key: 'pull.patch_url',
     label: 'patch_url',
     example: '"https://github.com/octocat/Hello-World/pull/1347.patch"'
+  },
+  {
+    key: 'pull.requested_reviewers',
+    label: 'requested_reviewers',
+    nodes: [
+      {
+        key: 'pull.requested_reviewers[0]|pull.requested_reviewers.0',
+        label: '0',
+        nodes: [
+          {
+            key: 'pull.requested_reviewers[0].login|pull.requested_reviewers.0.login',
+            label: 'login',
+            example: '"other_user"'
+          },
+          {
+            key: 'pull.requested_reviewers[0].id|pull.requested_reviewers.0.id',
+            label: 'id',
+            example: '1'
+          },
+          {
+            key: 'pull.requested_reviewers[0].node_id|pull.requested_reviewers.0.node_id',
+            label: 'node_id',
+            example: '"MDQ6VXNlcjE="'
+          },
+          {
+            key: 'pull.requested_reviewers[0].avatar_url|pull.requested_reviewers.0.avatar_url',
+            label: 'avatar_url',
+            example: '"https://github.com/images/error/other_user_happy.gif"'
+          },
+          {
+            key: 'pull.requested_reviewers[0].events_url|pull.requested_reviewers.0.events_url',
+            label: 'events_url',
+            example: '"https://api.github.com/users/other_user/events{/privacy}"'
+          },
+          {
+            key: 'pull.requested_reviewers[0].followers_url|pull.requested_reviewers.0.followers_url',
+            label: 'followers_url',
+            example: '"https://api.github.com/users/other_user/followers"'
+          },
+          {
+            key: 'pull.requested_reviewers[0].following_url|pull.requested_reviewers.0.following_url',
+            label: 'following_url',
+            example: '"https://api.github.com/users/other_user/following{/other_user}"'
+          },
+          {
+            key: 'pull.requested_reviewers[0].gists_url|pull.requested_reviewers.0.gists_url',
+            label: 'gists_url',
+            example: '"https://api.github.com/users/other_user/gists{/gist_id}"'
+          },
+          {
+            key: 'pull.requested_reviewers[0].gravatar_id|pull.requested_reviewers.0.gravatar_id',
+            label: 'gravatar_id',
+            example: '""'
+          },
+          {
+            key: 'pull.requested_reviewers[0].html_url|pull.requested_reviewers.0.html_url',
+            label: 'html_url',
+            example: '"https://github.com/other_user"'
+          },
+          {
+            key: 'pull.requested_reviewers[0].organizations_url|pull.requested_reviewers.0.organizations_url',
+            label: 'organizations_url',
+            example: '"https://api.github.com/users/other_user/orgs"'
+          },
+          {
+            key: 'pull.requested_reviewers[0].received_events_url|pull.requested_reviewers.0.received_events_url',
+            label: 'received_events_url',
+            example: '"https://api.github.com/users/other_user/received_events"'
+          },
+          {
+            key: 'pull.requested_reviewers[0].repos_url|pull.requested_reviewers.0.repos_url',
+            label: 'repos_url',
+            example: '"https://api.github.com/users/other_user/repos"'
+          },
+          {
+            key: 'pull.requested_reviewers[0].site_admin|pull.requested_reviewers.0.site_admin',
+            label: 'site_admin',
+            example: 'false'
+          },
+          {
+            key: 'pull.requested_reviewers[0].starred_url|pull.requested_reviewers.0.starred_url',
+            label: 'starred_url',
+            example: '"https://api.github.com/users/other_user/starred{/owner}{/repo}"'
+          },
+          {
+            key: 'pull.requested_reviewers[0].subscriptions_url|pull.requested_reviewers.0.subscriptions_url',
+            label: 'subscriptions_url',
+            example: '"https://api.github.com/users/other_user/subscriptions"'
+          },
+          {
+            key: 'pull.requested_reviewers[0].type|pull.requested_reviewers.0.type',
+            label: 'type',
+            example: '"User"'
+          },
+          {
+            key: 'pull.requested_reviewers[0].url|pull.requested_reviewers.0.url',
+            label: 'url',
+            example: '"https://api.github.com/users/other_user"'
+          },
+        ]
+      }
+    ]
+  },
+  {
+    key: 'pull.requested_teams',
+    label: 'requested_teams',
+    nodes: [
+      {
+        key: 'pull.requested_teams[0]|pull.requested_teams.0',
+        label: '0',
+        nodes: [
+          {
+            key: 'pull.requested_teams[0].id|pull.requested_teams.0.id',
+            label: 'id',
+            example: '1'
+          },
+          {
+            key: 'pull.requested_teams[0].node_id|pull.requested_teams.0.node_id',
+            label: 'node_id',
+            example: '"MDQ6VGVhbTE="'
+          },
+          {
+            key: 'pull.requested_teams[0].url|pull.requested_teams.0.url',
+            label: 'url',
+            example: '"https://api.github.com/teams/1"'
+          },
+          {
+            key: 'pull.requested_teams[0].name|pull.requested_teams.0.name',
+            label: 'name',
+            example: '"Justice League"'
+          },
+          {
+            key: 'pull.requested_teams[0].description|pull.requested_teams.0.description',
+            label: 'description',
+            example: '"A great team."'
+          },
+          {
+            key: 'pull.requested_teams[0].members_url|pull.requested_teams.0.members_url',
+            label: 'members_url',
+            example: '"https://api.github.com/teams/1/members{/member}"'
+          },
+          {
+            key: 'pull.requested_teams[0].parent|pull.requested_teams.0.parent',
+            label: 'parent',
+            example: 'null'
+          },
+          {
+            key: 'pull.requested_teams[0].permission|pull.requested_teams.0.permission',
+            label: 'permission',
+            example: '"admin"'
+          },
+          {
+            key: 'pull.requested_teams[0].privacy|pull.requested_teams.0.privacy',
+            label: 'privacy',
+            example: '"closed"'
+          },
+          {
+            key: 'pull.requested_teams[0].repositories_url|pull.requested_teams.0.repositories_url',
+            label: 'repositories_url',
+            example: '"https://api.github.com/teams/1/repos"'
+          },
+          {
+            key: 'pull.requested_teams[0].slug|pull.requested_teams.0.slug',
+            label: 'slug',
+            example: '"justice-league"'
+          },
+        ]
+      }
+    ]
   },
   {
     key: 'pull.review_comment_url',
