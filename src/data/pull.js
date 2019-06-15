@@ -25,6 +25,16 @@ export default [
     example: '"too heated"'
   },
   {
+    key: 'pull.additions',
+    label: 'additions',
+    example: '100'
+  },
+  {
+    key: 'pull.author_association',
+    label: 'author_association',
+    example: '"OWNER"'
+  },
+  {
     key: 'pull.assignee',
     label: 'assignee',
     nodes: [
@@ -228,14 +238,29 @@ export default [
     example: '"Please pull these awesome changes"'
   },
   {
+    key: 'pull.changed_files',
+    label: 'changed_files',
+    example: '5'
+  },
+  {
     key: 'pull.closed_at',
     label: 'closed_at',
     example: '"2011-01-26T19:01:12Z"'
   },
   {
+    key: 'pull.comments',
+    label: 'comments',
+    example: '10'
+  },
+  {
     key: 'pull.comments_url',
     label: 'comments_url',
     example: '"https://api.github.com/repos/octocat/Hello-World/issues/1347/comments"'
+  },
+  {
+    key: 'pull.commits',
+    label: 'commits',
+    example: '3'
   },
   {
     key: 'pull.commits_url',
@@ -251,6 +276,275 @@ export default [
     key: 'pull.diff_url',
     label: 'diff_url',
     example: '"https://github.com/octocat/Hello-World/pull/1347.diff"'
+  },
+  {
+    key: 'pull.draft',
+    label: 'draft',
+    example: 'false'
+  },
+  {
+    key: 'pull.deletions',
+    label: 'deletions',
+    example: '3'
+  },
+  {
+    key: 'pull.head',
+    label: 'head',
+    nodes: [
+      {
+        key: 'pull.head.label',
+        label: 'label',
+        example: '"octocat:new-topic"'
+      },
+      {
+        key: 'pull.head.ref',
+        label: 'ref',
+        example: '"new-topic"'
+      },
+      {
+        key: 'pull.head.sha',
+        label: 'sha',
+        example: '"6dcb09b5b57875f334f61aebed695e2e4193db5e"'
+      },
+      {
+        key: 'pull.head.repo',
+        label: 'repo',
+        nodes: [
+          {
+            key: 'pull.head.repo.id',
+            label: 'id',
+            example: '1296269'
+          },
+          {
+            key: 'pull.head.repo.node_id',
+            label: 'node_id',
+            example: '"MDEwOlJlcG9zaXRvcnkxMjk2MjY5"'
+          },
+          {
+            key: 'pull.head.repo.name',
+            label: 'name',
+            example: '"Hello-World"'
+          },
+          {
+            key: 'pull.head.repo.description',
+            label: 'description',
+            example: '"This is your first repo!"'
+          },
+          {
+            key: 'pull.head.repo.fork',
+            label: 'fork',
+            example: 'false'
+          },
+          {
+            key: 'pull.head.repo.full_name',
+            label: 'full_name',
+            example: '"octocat/Hello-World"'
+          },
+          {
+            key: 'pull.head.repo.html_url',
+            label: 'html_url',
+            example: '"https://github.com/octocat/Hello-World"'
+          },
+          {
+            key: 'pull.head.repo.owner',
+            label: 'owner',
+            nodes: [
+              {
+                key: 'pull.head.repo.owner.login',
+                label: 'login',
+                example: '"octocat"'
+              },
+              {
+                key: 'pull.head.repo.owner.id',
+                label: 'id',
+                example: '1'
+              },
+              {
+                key: 'pull.head.repo.owner.node_id',
+                label: 'node_id',
+                example: '"MDQ6VXNlcjE="'
+              },
+              {
+                key: 'pull.head.repo.owner.avatar_url',
+                label: 'avatar_url',
+                example: '"https://github.com/images/error/octocat_happy.gif"'
+              },
+              {
+                key: 'pull.head.repo.owner.events_url',
+                label: 'events_url',
+                example: '"https://api.github.com/users/octocat/events{/privacy}"'
+              },
+              {
+                key: 'pull.head.repo.owner.followers_url',
+                label: 'followers_url',
+                example: '"https://api.github.com/users/octocat/followers"'
+              },
+              {
+                key: 'pull.head.repo.owner.following_url',
+                label: 'following_url',
+                example: '"https://api.github.com/users/octocat/following{/other_user}"'
+              },
+              {
+                key: 'pull.head.repo.owner.gists_url',
+                label: 'gists_url',
+                example: '"https://api.github.com/users/octocat/gists{/gist_id}"'
+              },
+              {
+                key: 'pull.head.repo.owner.gravatar_id',
+                label: 'gravatar_id',
+                example: '""'
+              },
+              {
+                key: 'pull.head.repo.owner.html_url',
+                label: 'html_url',
+                example: '"https://github.com/octocat"'
+              },
+              {
+                key: 'pull.head.repo.owner.organizations_url',
+                label: 'organizations_url',
+                example: '"https://api.github.com/users/octocat/orgs"'
+              },
+              {
+                key: 'pull.head.repo.owner.received_events_url',
+                label: 'received_events_url',
+                example: '"https://api.github.com/users/octocat/received_events"'
+              },
+              {
+                key: 'pull.head.repo.owner.repos_url',
+                label: 'repos_url',
+                example: '"https://api.github.com/users/octocat/repos"'
+              },
+              {
+                key: 'pull.head.repo.owner.site_admin',
+                label: 'site_admin',
+                example: 'false'
+              },
+              {
+                key: 'pull.head.repo.owner.starred_url',
+                label: 'starred_url',
+                example: '"https://api.github.com/users/octocat/starred{/owner}{/repo}"'
+              },
+              {
+                key: 'pull.head.repo.owner.subscriptions_url',
+                label: 'subscriptions_url',
+                example: '"https://api.github.com/users/octocat/subscriptions"'
+              },
+              {
+                key: 'pull.head.repo.owner.type',
+                label: 'type',
+                example: '"User"'
+              },
+              {
+                key: 'pull.head.repo.owner.url',
+                label: 'url',
+                example: '"https://api.github.com/users/octocat"'
+              },
+            ]
+          },
+          {
+            key: 'pull.head.repo.private',
+            label: 'private',
+            example: 'false'
+          },
+        ]
+      },
+      {
+        key: 'pull.head.user',
+        label: 'user',
+        nodes: [
+          {
+            key: 'pull.head.user.login',
+            label: 'login',
+            example: '"octocat"'
+          },
+          {
+            key: 'pull.head.user.id',
+            label: 'id',
+            example: '1'
+          },
+          {
+            key: 'pull.head.user.node_id',
+            label: 'node_id',
+            example: '"MDQ6VXNlcjE="'
+          },
+          {
+            key: 'pull.head.user.avatar_url',
+            label: 'avatar_url',
+            example: '"https://github.com/images/error/octocat_happy.gif"'
+          },
+          {
+            key: 'pull.head.user.events_url',
+            label: 'events_url',
+            example: '"https://api.github.com/users/octocat/events{/privacy}"'
+          },
+          {
+            key: 'pull.head.user.followers_url',
+            label: 'followers_url',
+            example: '"https://api.github.com/users/octocat/followers"'
+          },
+          {
+            key: 'pull.head.user.following_url',
+            label: 'following_url',
+            example: '"https://api.github.com/users/octocat/following{/other_user}"'
+          },
+          {
+            key: 'pull.head.user.gists_url',
+            label: 'gists_url',
+            example: '"https://api.github.com/users/octocat/gists{/gist_id}"'
+          },
+          {
+            key: 'pull.head.user.gravatar_id',
+            label: 'gravatar_id',
+            example: '""'
+          },
+          {
+            key: 'pull.head.user.html_url',
+            label: 'html_url',
+            example: '"https://github.com/octocat"'
+          },
+          {
+            key: 'pull.head.user.organizations_url',
+            label: 'organizations_url',
+            example: '"https://api.github.com/users/octocat/orgs"'
+          },
+          {
+            key: 'pull.head.user.received_events_url',
+            label: 'received_events_url',
+            example: '"https://api.github.com/users/octocat/received_events"'
+          },
+          {
+            key: 'pull.head.user.repos_url',
+            label: 'repos_url',
+            example: '"https://api.github.com/users/octocat/repos"'
+          },
+          {
+            key: 'pull.head.user.site_admin',
+            label: 'site_admin',
+            example: 'false'
+          },
+          {
+            key: 'pull.head.user.starred_url',
+            label: 'starred_url',
+            example: '"https://api.github.com/users/octocat/starred{/owner}{/repo}"'
+          },
+          {
+            key: 'pull.head.user.subscriptions_url',
+            label: 'subscriptions_url',
+            example: '"https://api.github.com/users/octocat/subscriptions"'
+          },
+          {
+            key: 'pull.head.user.type',
+            label: 'type',
+            example: '"User"'
+          },
+          {
+            key: 'pull.head.user.url',
+            label: 'url',
+            example: '"https://api.github.com/users/octocat"'
+          },
+        ]
+      },
+    ]
   },
   {
     key: 'pull.html_url',
@@ -310,8 +604,107 @@ export default [
     ]
   },
   {
+    key: 'pull._links',
+    label: '_links',
+    nodes: [
+      {
+        key: 'pull._links.comments',
+        label: 'comments',
+        nodes: [
+          {
+            key: 'pull._links.comments.href',
+            label: 'href',
+            example: '"https://api.github.com/repos/octocat/Hello-World/issues/1347/comments"'
+          },
+        ]
+      },
+      {
+        key: 'pull._links.commits',
+        label: 'commits',
+        nodes: [
+          {
+            key: 'pull._links.commits.href',
+            label: 'href',
+            example: '"https://api.github.com/repos/octocat/Hello-World/pulls/1347/commits"'
+          },
+        ]
+      },
+      {
+        key: 'pull._links.html',
+        label: 'html',
+        nodes: [
+          {
+            key: 'pull._links.html.href',
+            label: 'href',
+            example: '"https://github.com/octocat/Hello-World/pull/1347"'
+          },
+        ]
+      },
+      {
+        key: 'pull._links.issue',
+        label: 'issue',
+        nodes: [
+          {
+            key: 'pull._links.issue.href',
+            label: 'href',
+            example: '"https://api.github.com/repos/octocat/Hello-World/issues/1347"'
+          },
+        ]
+      },
+      {
+        key: 'pull._links.review_comment',
+        label: 'review_comment',
+        nodes: [
+          {
+            key: 'pull._links.review_comment.href',
+            label: 'href',
+            example: '"https://api.github.com/repos/octocat/Hello-World/pulls/comments{/number}"'
+          },
+        ]
+      },
+      {
+        key: 'pull._links.review_comments',
+        label: 'review_comments',
+        nodes: [
+          {
+            key: 'pull._links.review_comments.href',
+            label: 'href',
+            example: '"https://api.github.com/repos/octocat/Hello-World/pulls/1347/comments"'
+          },
+        ]
+      },
+      {
+        key: 'pull._links.self',
+        label: 'self',
+        nodes: [
+          {
+            key: 'pull._links.self.href',
+            label: 'href',
+            example: '"https://api.github.com/repos/octocat/Hello-World/pulls/1347"'
+          },
+        ]
+      },
+      {
+        key: 'pull._links.statuses',
+        label: 'statuses',
+        nodes: [
+          {
+            key: 'pull._links.statuses.href',
+            label: 'href',
+            example: '"https://api.github.com/repos/octocat/Hello-World/statuses/6dcb09b5b57875f334f61aebed695e2e4193db5e"'
+          },
+        ]
+      },
+    ]
+  },
+  {
     key: 'pull.locked',
     label: 'locked',
+    example: 'true'
+  },
+  {
+    key: 'pull.maintainer_can_modify',
+    label: 'maintainer_can_modify',
     example: 'true'
   },
   {
@@ -320,9 +713,120 @@ export default [
     example: '"e5bd3914e2e596debea16f433f57875b5b90bcd6"'
   },
   {
+    key: 'pull.mergeable',
+    label: 'mergeable',
+    example: 'true'
+  },
+  {
+    key: 'pull.mergeable_state',
+    label: 'mergeable_state',
+    example: '"clean"'
+  },
+  {
+    key: 'pull.merged',
+    label: 'merged',
+    example: 'false'
+  },
+  {
     key: 'pull.merged_at',
     label: 'merged_at',
     example: '"2011-01-26T19:01:12Z"'
+  },
+  {
+    key: 'pull.merged_by',
+    label: 'merged_by',
+    nodes: [
+      {
+        key: 'pull.merged_by.login',
+        label: 'login',
+        example: '"octocat"'
+      },
+      {
+        key: 'pull.merged_by.id',
+        label: 'id',
+        example: '1'
+      },
+      {
+        key: 'pull.merged_by.node_id',
+        label: 'node_id',
+        example: '"MDQ6VXNlcjE="'
+      },
+      {
+        key: 'pull.merged_by.avatar_url',
+        label: 'avatar_url',
+        example: '"https://github.com/images/error/octocat_happy.gif"'
+      },
+      {
+        key: 'pull.merged_by.events_url',
+        label: 'events_url',
+        example: '"https://api.github.com/users/octocat/events{/privacy}"'
+      },
+      {
+        key: 'pull.merged_by.followers_url',
+        label: 'followers_url',
+        example: '"https://api.github.com/users/octocat/followers"'
+      },
+      {
+        key: 'pull.merged_by.following_url',
+        label: 'following_url',
+        example: '"https://api.github.com/users/octocat/following{/other_user}"'
+      },
+      {
+        key: 'pull.merged_by.gists_url',
+        label: 'gists_url',
+        example: '"https://api.github.com/users/octocat/gists{/gist_id}"'
+      },
+      {
+        key: 'pull.merged_by.gravatar_id',
+        label: 'gravatar_id',
+        example: '""'
+      },
+      {
+        key: 'pull.merged_by.html_url',
+        label: 'html_url',
+        example: '"https://github.com/octocat"'
+      },
+      {
+        key: 'pull.merged_by.organizations_url',
+        label: 'organizations_url',
+        example: '"https://api.github.com/users/octocat/orgs"'
+      },
+      {
+        key: 'pull.merged_by.received_events_url',
+        label: 'received_events_url',
+        example: '"https://api.github.com/users/octocat/received_events"'
+      },
+      {
+        key: 'pull.merged_by.repos_url',
+        label: 'repos_url',
+        example: '"https://api.github.com/users/octocat/repos"'
+      },
+      {
+        key: 'pull.merged_by.site_admin',
+        label: 'site_admin',
+        example: 'false'
+      },
+      {
+        key: 'pull.merged_by.starred_url',
+        label: 'starred_url',
+        example: '"https://api.github.com/users/octocat/starred{/owner}{/repo}"'
+      },
+      {
+        key: 'pull.merged_by.subscriptions_url',
+        label: 'subscriptions_url',
+        example: '"https://api.github.com/users/octocat/subscriptions"'
+      },
+      {
+        key: 'pull.merged_by.type',
+        label: 'type',
+        example: '"User"'
+      },
+      {
+        key: 'pull.merged_by.url',
+        label: 'url',
+        example: '"https://api.github.com/users/octocat"'
+      },
+    ]
   },
   {
     key: 'pull.milestone',
@@ -507,6 +1011,11 @@ export default [
     example: '"https://github.com/octocat/Hello-World/pull/1347.patch"'
   },
   {
+    key: 'pull.rebaseable',
+    label: 'rebaseable',
+    example: 'true'
+  },
+  {
     key: 'pull.requested_reviewers',
     label: 'requested_reviewers',
     nodes: [
@@ -679,6 +1188,11 @@ export default [
     key: 'pull.review_comment_url',
     label: 'review_comment_url',
     example: '"https://api.github.com/repos/octocat/Hello-World/pulls/comments{/number}"'
+  },
+  {
+    key: 'pull.review_comments',
+    label: 'review_comments',
+    example: '0'
   },
   {
     key: 'pull.review_comments_url',
