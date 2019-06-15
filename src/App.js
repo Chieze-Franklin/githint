@@ -24,6 +24,9 @@ function App() {
             <Route exact path="/commit" render={props => {
               return (<DirectoryPage object="commit" />)
             }} />
+            <Route exact path="/pull" render={props => {
+              return (<DirectoryPage object="pull" />)
+            }} />
             <Route exact path="/tree" render={props => {
               return (<DirectoryPage object="tree" />)
             }} />

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
 import { connect } from '../../context-api-redux';
 
@@ -13,41 +12,22 @@ import {
 
 function Privacy(props) {
   return (<SiteWrapper>
-    <Page.Content>
+    <Page.Content title="Privacy">
       <Grid.Row>
         <Grid.Col md={12} xl={12}>
           <Card>
             <Card.Header>
-              <Card.Title>Privacy</Card.Title>
+              <Card.Title>{props.appName} does not collect, store or share your data</Card.Title>
             </Card.Header>
             <Card.Body>
               <p>
-                {props.appName} ensures that your pull requests follow specified conventions.
+                {props.appName} does not collect, store or share any piece of information about you
+                or your source code. {props.appName} works with the <i>metadata</i> of branches,
+                commits, pull requests and trees of your repository by retrieving them via the
+                GitHub API and making them available to you (and only you) in your {props.appConfig} file checks.
               </p>
               <p>
-                There are conventions that may not be easily checked with tools like ESLint or Hound CI.
-                These could range from arbitrary checks like{" "}
-                <code>
-                  A pull request must be raised by a user whose first name is not more than 6 characters long
-                </code>
-                {" "}to more practical checks like{" "}
-                <code>
-                  A pull request must have at least 2 review comments
-                </code>
-                .{" "}{props.appName} thrives on checking these kinds of conventions.
-              </p>
-              <p>
-                {props.appName} fetches metadata about pull requests, commits, branches, trees, and passes the
-                metadata to user-defined scripts for evaluation. Such scripts are expected to return
-                {" "}<code>true</code> or <code>false</code> to determine if a pull request is ready to be merged.
-              </p>
-              <p>
-                To start using {props.appName}, first install the
-                {" "}<a href="https://github.com/marketplace/ghint-bot" target="_blank" rel="noopener noreferrer">
-                  {props.appName} GitHub app
-                </a>{" "}
-                on your repository and
-                add a <Link to="/config">{props.appConfig} file</Link> to the root directory of the repository. That's it!
+                The only file ever read from your repository is the {props.appConfig} file.
               </p>
             </Card.Body>
           </Card>

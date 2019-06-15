@@ -39,7 +39,7 @@ const navBarItems = [{
   useExact: true,
 }, {
   value: "Pull Request",
-  to: "/pr",
+  to: "/pull",
   icon: "git-pull-request",
   LinkComponent: withRouter(NavLink),
   useExact: true,

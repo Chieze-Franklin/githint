@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
 import { connect } from '../../context-api-redux';
 
@@ -9,45 +8,49 @@ import {
   Page,
   Grid,
   Card,
+  Icon
 } from "tabler-react";
 
 function Privacy(props) {
   return (<SiteWrapper>
-    <Page.Content>
+    <Page.Content title="Support">
       <Grid.Row>
         <Grid.Col md={12} xl={12}>
           <Card>
             <Card.Header>
-              <Card.Title>Support</Card.Title>
+              <Card.Title>Issues</Card.Title>
             </Card.Header>
             <Card.Body>
               <p>
-                {props.appName} ensures that your pull requests follow specified conventions.
+                The development of {props.appName} happens in the open
+                on <a href="https://github.com/Chieze-Franklin/ghint-bot">GitHub</a>. To
+                raise new issues or to see existing issues,
+                go <a href="https://github.com/Chieze-Franklin/ghint-bot/issues">here</a>.
               </p>
               <p>
-                There are conventions that may not be easily checked with tools like ESLint or Hound CI.
-                These could range from arbitrary checks like{" "}
-                <code>
-                  A pull request must be raised by a user whose first name is not more than 6 characters long
-                </code>
-                {" "}to more practical checks like{" "}
-                <code>
-                  A pull request must have at least 2 review comments
-                </code>
-                .{" "}{props.appName} thrives on checking these kinds of conventions.
+                The development of this {props.appName} website also happens in the open
+                on <a href="https://github.com/Chieze-Franklin/ghint">GitHub</a>. To
+                raise new issues or to see existing issues,
+                go <a href="https://github.com/Chieze-Franklin/ghint/issues">here</a>.
               </p>
+            </Card.Body>
+          </Card>
+        </Grid.Col>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Col md={12} xl={12}>
+          <Card>
+            <Card.Header>
+              <Card.Title>Contact</Card.Title>
+            </Card.Header>
+            <Card.Body>
               <p>
-                {props.appName} fetches metadata about pull requests, commits, branches, trees, and passes the
-                metadata to user-defined scripts for evaluation. Such scripts are expected to return
-                {" "}<code>true</code> or <code>false</code> to determine if a pull request is ready to be merged.
-              </p>
-              <p>
-                To start using {props.appName}, first install the
-                {" "}<a href="https://github.com/marketplace/ghint-bot" target="_blank" rel="noopener noreferrer">
-                  {props.appName} GitHub app
-                </a>{" "}
-                on your repository and
-                add a <Link to="/config">{props.appConfig} file</Link> to the root directory of the repository. That's it!
+                <Icon prefix="fe" name="mail" /> <a href="mailto:chieze.franklin@gmail.com">
+                  chieze.franklin@gmail.com</a><br />
+                <Icon prefix="fe" name="twitter" /> <a href="https://twitter.com/franklin_chieze">
+                  @franklin_chieze</a><br />
+                <Icon prefix="fe" name="github" /> <a href="https://github.com/Chieze-Franklin">
+                  @Chieze-Franklin</a>
               </p>
             </Card.Body>
           </Card>
