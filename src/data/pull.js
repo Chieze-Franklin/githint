@@ -326,14 +326,84 @@ export default [
             example: '"Hello-World"'
           },
           {
+            key: 'pull.head.repo.archive_url',
+            label: 'archive_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}"'
+          },
+          {
+            key: 'pull.head.repo.assignees_url',
+            label: 'assignees_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/assignees{/user}"'
+          },
+          {
+            key: 'pull.head.repo.blobs_url',
+            label: 'blobs_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}"'
+          },
+          {
+            key: 'pull.head.repo.branches_url',
+            label: 'branches_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/branches{/branch}"'
+          },
+          {
+            key: 'pull.head.repo.collaborators_url',
+            label: 'collaborators_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}"'
+          },
+          {
+            key: 'pull.head.repo.comments_url',
+            label: 'comments_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/comments{/number}"'
+          },
+          {
+            key: 'pull.head.repo.commits_url',
+            label: 'commits_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/commits{/sha}"'
+          },
+          {
+            key: 'pull.head.repo.compare_url',
+            label: 'compare_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}"'
+          },
+          {
+            key: 'pull.head.repo.contents_url',
+            label: 'contents_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/contents/{+path}"'
+          },
+          {
+            key: 'pull.head.repo.contributors_url',
+            label: 'contributors_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/contributors"'
+          },
+          {
+            key: 'pull.head.repo.deployments_url',
+            label: 'deployments_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/contributors"'
+          },
+          {
             key: 'pull.head.repo.description',
             label: 'description',
             example: '"This is your first repo!"'
           },
           {
+            key: 'pull.head.repo.downloads_url',
+            label: 'downloads_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/downloads"'
+          },
+          {
+            key: 'pull.head.repo.events_url',
+            label: 'events_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/events"'
+          },
+          {
             key: 'pull.head.repo.fork',
             label: 'fork',
             example: 'false'
+          },
+          {
+            key: 'pull.head.repo.forks_url',
+            label: 'forks_url',
+            example: '"http://api.github.com/repos/octocat/Hello-World/forks"'
           },
           {
             key: 'pull.head.repo.full_name',
@@ -445,6 +515,11 @@ export default [
             key: 'pull.head.repo.private',
             label: 'private',
             example: 'false'
+          },
+          {
+            key: 'pull.head.repo.url',
+            label: 'url',
+            example: '"https://api.github.com/repos/octocat/Hello-World"'
           },
         ]
       },
