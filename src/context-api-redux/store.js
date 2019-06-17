@@ -4,7 +4,7 @@ import reducer from './reducers';
 
 const initialState = {
   app: {
-    config: '.ghint',
+    config: '.ghint.json',
     name: 'Ghint',
   },
   searchTerms: {
