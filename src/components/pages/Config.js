@@ -121,7 +121,8 @@ function Config(props) {
                 in its <code>script</code> field and the message to show to the user in the
                 <code>message</code> field. The <code>script</code> field can be either a
                 <code>String</code> or a <code>String Array</code>, and follows the same rules explained
-                above. The <code>message</code> field holds the message to be shown to the user
+                above. The <code>message</code> field (which can also be either a <code>String</code> or
+                a <code>String Array</code>) holds the message to be shown to the user
                 (irrespective of the outcome of the check).<br />
                 Example:
                 <pre>
