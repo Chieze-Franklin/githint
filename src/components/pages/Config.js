@@ -118,12 +118,14 @@ function Config(props) {
               </p>
               <p>
                 <Icon prefix="fe" name="target" /> An <code>Object</code> which holds the code to execute
-                in its <code>script</code> field and the message to show to the user in the
-                <code>message</code> field. The <code>script</code> field can be either a
+                in its <code>script</code> field, the message to show to the user in the
+                <code>message</code> field, and a boolean value which determines if a check should be
+                skipped in the <code>skip</code> field. The <code>script</code> field can be either a
                 <code>String</code> or a <code>String Array</code>, and follows the same rules explained
                 above. The <code>message</code> field (which can also be either a <code>String</code> or
                 a <code>String Array</code>) holds the message to be shown to the user
-                (irrespective of the outcome of the check).<br />
+                (irrespective of the outcome of the check). The <code>skip</code> (<code>false</code> by
+                default), when set to <code>true</code>, will force make that check to be skipped.<br />
                 Example:
                 <pre>
                 <code>
@@ -131,6 +133,7 @@ function Config(props) {
 `{
 	"checks": {
 		"Only Franklin can edit the .ghint file": {
+      "skip": false,
 			"script": [
 				"let file = commit.files[0].filename",
 				"let editor = commit.commit.author.name",
