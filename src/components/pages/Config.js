@@ -36,6 +36,7 @@ function Config(props) {
                 checks to be run for branches, commits, pull requests and trees. Below is a sample {props.appConfig} file.
               </p>
               <p>
+                <i>*refresh this page to see syntax-highlighting applied to the code snippets</i>
                 <pre>
                 <code>
                 {
