@@ -321,56 +321,56 @@ export default [
     label: 'files',
     nodes: [
       {
-        key: 'commit.files[0]|commit.files.0',
+        key: 'commit.files[0]',
         label: '0',
         nodes: [
           {
-            key: 'commit.files[0].sha|commit.files.0.sha',
+            key: 'commit.files[0].sha',
             label: 'sha',
             example: '"8c1fe41bb646b10782fb602cd1f0aa3dc827c3cb"'
           },
           {
-            key: 'commit.files[0].filename|commit.files.0.filename',
+            key: 'commit.files[0].filename',
             label: 'filename',
             example: '"file1.txt"'
           },
           {
-            key: 'commit.files[0].additions|commit.files.0.additions',
+            key: 'commit.files[0].additions',
             label: 'additions',
             example: '10'
           },
           {
-            key: 'commit.files[0].deletions|commit.files.0.deletions',
+            key: 'commit.files[0].deletions',
             label: 'deletions',
             example: '2'
           },
           {
-            key: 'commit.files[0].changes|commit.files.0.changes',
+            key: 'commit.files[0].changes',
             label: 'changes',
             example: '12'
           },
           {
-            key: 'commit.files[0].status|commit.files.0.status',
+            key: 'commit.files[0].status',
             label: 'status',
             example: '"modified"'
           },
           {
-            key: 'commit.files[0].blob_url|commit.files.0.blob_url',
+            key: 'commit.files[0].blob_url',
             label: 'blob_url',
             example: '"https://github.com/octocat/Hello-World/blob/7ca483543807a51b6079e54ac4cc392bc29ae284/file1.txt"'
           },
           {
-            key: 'commit.files[0].contents_url|commit.files.0.contents_url',
+            key: 'commit.files[0].contents_url',
             label: 'contents_url',
             example: '"https://api.github.com/repos/octocat/Hello-World/contents/file1.txt?ref=7ca483543807a51b6079e54ac4cc392bc29ae284"'
           },
           {
-            key: 'commit.files[0].raw_url|commit.files.0.raw_url',
+            key: 'commit.files[0].raw_url',
             label: 'raw_url',
             example: '"https://github.com/octocat/Hello-World/raw/7ca483543807a51b6079e54ac4cc392bc29ae284/file1.txt"'
           },
           {
-            key: 'commit.files[0].patch|commit.files.0.patch',
+            key: 'commit.files[0].patch',
             label: 'patch',
             example: '"@@ -29,7 +29,7 @@\\n....."'
           },
@@ -383,21 +383,21 @@ export default [
     label: 'parents',
     nodes: [
       {
-        key: 'commit.parents[0]|commit.parents.0',
+        key: 'commit.parents[0]',
         label: '0',
         nodes: [
           {
-            key: 'commit.parents[0].sha|commit.parents.0.sha',
+            key: 'commit.parents[0].sha',
             label: 'sha',
             example: '"6dcb09b5b57875f334f61aebed695e2e4193db5e"'
           },
           {
-            key: 'commit.parents[0].html_url|commit.parents.0.html_url',
+            key: 'commit.parents[0].html_url',
             label: 'html_url',
             example: '"https://github.com/octocat/Hello-World/commit/6dcb09b5b57875f334f61aebed695e2e4193db5e"'
           },
           {
-            key: 'commit.parents[0].url|commit.parents.0.url',
+            key: 'commit.parents[0].url',
             label: 'url',
             example: '"https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e"'
           },

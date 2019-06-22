@@ -330,21 +330,21 @@ export default [
         label: 'parents',
         nodes: [
           {
-            key: 'branch.commit.parents[0]|branch.commit.parents.0',
+            key: 'branch.commit.parents[0]',
             label: '0',
             nodes: [
               {
-                key: 'branch.commit.parents[0].sha|branch.commit.parents.0.sha',
+                key: 'branch.commit.parents[0].sha',
                 label: 'sha',
                 example: '"553c2077f0edc3d5dc5d17262f6aa498e69d6f8e"'
               },
               {
-                key: 'branch.commit.parents[0].html_url|branch.commit.parents.0.html_url',
+                key: 'branch.commit.parents[0].html_url',
                 label: 'html_url',
                 example: '"https://github.com/octocat/Hello-World/commit/553c2077f0edc3d5dc5d17262f6aa498e69d6f8e"'
               },
               {
-                key: 'branch.commit.parents[0].url|branch.commit.parents.0.url',
+                key: 'branch.commit.parents[0].url',
                 label: 'url',
                 example: '"https://api.github.com/repos/octocat/Hello-World/commits/553c2077f0edc3d5dc5d17262f6aa498e69d6f8e"'
               },
