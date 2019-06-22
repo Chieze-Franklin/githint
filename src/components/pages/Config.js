@@ -24,7 +24,7 @@ function Config(props) {
             <Card.Body>
               <p>
                 To start using {props.appName}, first install the
-                {" "}<a href="https://github.com/apps/ghint-bot" target="_blank" rel="noopener noreferrer">
+                {" "}<a href="https://github.com/apps/githint-bot" target="_blank" rel="noopener noreferrer">
                   {props.appName} GitHub app
                 </a>{" "}
                 on your repository and
@@ -56,13 +56,13 @@ function Config(props) {
 			"script": "/^((ft-)|(ch-)|(bug-))[a-z0-9\\-]+$/.test(branch.name)",
 			"message": "The name of this branch doesn't meet the specified criteria"
 		},
-		"Only Franklin can edit the .ghint file": {
+		"Only Franklin can edit the .githint.json file": {
 			"script": [
 				"let file = commit.files[0].filename",
 				"let editor = commit.commit.author.name",
-				"return (file != '.ghint' || editor == 'Chieze Franklin');"
+				"return (file != '.githint.json' || editor == 'Chieze Franklin');"
 			],
-			"message": "The .ghint file shouldn't be touched; Only Franklin can edit the file."
+			"message": "The .githint.json file shouldn't be touched; Only Franklin can edit the file."
 		},
 		"Repo must contain CONTRIBUTING.md": "tree.tree.filter(t => t.path === 'CONTRIBUTING.md').length === 1",
 		"A PR cannot touch more than 1 file": "pull.changed_files < 2"
@@ -133,14 +133,14 @@ function Config(props) {
                 {
 `{
 	"checks": {
-		"Only Franklin can edit the .ghint file": {
+		"Only Franklin can edit the .githint.json file": {
       "skip": false,
 			"script": [
 				"let file = commit.files[0].filename",
 				"let editor = commit.commit.author.name",
-				"return (file != '.ghint' || editor == 'Chieze Franklin');"
+				"return (file != '.githint.json' || editor == 'Chieze Franklin');"
 			],
-			"message": "The .ghint file shouldn't be touched; Only Franklin can edit the file."
+			"message": "The .githint.json file shouldn't be touched; Only Franklin can edit the file."
 		}
 	}
 }`
@@ -166,17 +166,17 @@ function Config(props) {
                 Before execution of the checks, {props.appName} ensures it can find the {props.appConfig} file
                 in the root directory of the repository.
                 If the {props.appConfig} file cannot be found or successfully read, the built-in check
-                {" "}<code>Ghint: check for {props.appConfig} file</code> will fail.<br />
+                {" "}<code>GitHint: check for {props.appConfig} file</code> will fail.<br />
                 If this happens ensure the {props.appConfig} file exists and is a valid JSON document.
               </p>
               <p>
                 {props.appName} also ensures a pull request has been created. Due to the fact that GitHub
                 starts running check suites once a commit is made to a repository (even before a pull request
                 is created), there may be no pull request when the checks are executed. If no pull request can
-                be found the built-in check <code>Ghint: check for pull request</code> will fail.<br />
+                be found the built-in check <code>GitHint: check for pull request</code> will fail.<br />
                 If this happens simply <em>re-run</em> the failed check.<br />
                 For more info on this issue and how to handle it, see
-                {" "}<a href="https://github.com/Chieze-Franklin/ghint-bot/issues/11">here</a>.
+                {" "}<a href="https://github.com/Chieze-Franklin/githint-bot/issues/11">here</a>.
               </p>
               <p>
                 The code snippets for the checks have access to the following (runtime-generated) objects:
@@ -251,7 +251,7 @@ function Config(props) {
               <p>
                 Note that the <code>pull</code> object may be undefined the first time checks are run.<br />
                 For more info on this issue and how to handle it, see
-                {" "}<a href="https://github.com/Chieze-Franklin/ghint-bot/issues/11">here</a>.
+                {" "}<a href="https://github.com/Chieze-Franklin/githint-bot/issues/11">here</a>.
               </p>
               <hr />
               <p>

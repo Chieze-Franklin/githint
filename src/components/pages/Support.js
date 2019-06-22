@@ -23,15 +23,15 @@ function Privacy(props) {
             <Card.Body>
               <p>
                 The development of {props.appName} happens in the open
-                on <a href="https://github.com/Chieze-Franklin/ghint-bot">GitHub</a>. To
+                on <a href="https://github.com/Chieze-Franklin/githint-bot">GitHub</a>. To
                 raise new issues or to see existing issues,
-                go <a href="https://github.com/Chieze-Franklin/ghint-bot/issues">here</a>.
+                go <a href="https://github.com/Chieze-Franklin/githint-bot/issues">here</a>.
               </p>
               <p>
                 The development of this {props.appName} website also happens in the open
-                on <a href="https://github.com/Chieze-Franklin/ghint">GitHub</a>. To
+                on <a href="https://github.com/Chieze-Franklin/githint">GitHub</a>. To
                 raise new issues or to see existing issues,
-                go <a href="https://github.com/Chieze-Franklin/ghint/issues">here</a>.
+                go <a href="https://github.com/Chieze-Franklin/githint/issues">here</a>.
               </p>
             </Card.Body>
           </Card>

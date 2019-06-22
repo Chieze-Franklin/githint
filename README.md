@@ -1,6 +1,6 @@
-## Ghint
+## GitHint
 
-Codebase for [Ghint GitHub app](https://github.com/apps/ghint-bot) documentation.
+Codebase for [GitHint GitHub app](https://github.com/apps/githint-bot) documentation.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -59,7 +59,7 @@ function Home(props) {
               </p>
               <p>
                 To start using {props.appName}, first install the
-                {" "}<a href="https://github.com/apps/ghint-bot" target="_blank" rel="noopener noreferrer">
+                {" "}<a href="https://github.com/apps/githint-bot" target="_blank" rel="noopener noreferrer">
                   {props.appName} GitHub app
                 </a>{" "}
                 on your repository and

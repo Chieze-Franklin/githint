@@ -79,7 +79,7 @@ class SiteWrapper extends Component {
         imageURL: "../images/logo.svg",
         navItems: (<Nav.Item type="div" className="d-none d-md-flex">
           <Button
-            href="https://github.com/Chieze-Franklin/ghint-bot"
+            href="https://github.com/Chieze-Franklin/githint-bot"
             target="_blank"
             outline
             size="sm"
@@ -87,7 +87,7 @@ class SiteWrapper extends Component {
             color="primary"
           >
             <Icon prefix="fe" name="github" />&nbsp;
-            ghint bot
+            githint bot
           </Button>
         </Nav.Item>)
       }}
@@ -131,14 +131,14 @@ class SiteWrapper extends Component {
             </Grid.Col>
             <Grid.Col auto={true}>
               <Button
-                href="https://github.com/Chieze-Franklin/ghint-bot"
+                href="https://github.com/Chieze-Franklin/githint-bot"
                 size="sm"
                 outline
                 color="primary"
                 RootComponent="a"
               >
                 <Icon prefix="fe" name="github" />&nbsp;
-                ghint bot
+                githint bot
               </Button>
             </Grid.Col>
           </React.Fragment>

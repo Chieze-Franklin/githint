@@ -1,6 +1,6 @@
 const initialState = {
   app: {
-    name: 'Ghint'
+    name: 'GitHint'
   },
   searchTerms: {
     branch: ''
