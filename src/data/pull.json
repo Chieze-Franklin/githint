@@ -189,6 +189,86 @@
         "parent": null
       }
     ],
+    "reviews": [
+      {
+        "id": 253118943,
+        "node_id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3MjUzMTE4OTQz",
+        "user": {
+          "login": "hubot",
+          "id": 1,
+          "node_id": "MDQ6VXNlcjE=",
+          "avatar_url": "https://github.com/images/error/hubot_happy.gif",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/hubot",
+          "html_url": "https://github.com/hubot",
+          "followers_url": "https://api.github.com/users/hubot/followers",
+          "following_url": "https://api.github.com/users/hubot/following{/other_user}",
+          "gists_url": "https://api.github.com/users/hubot/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/hubot/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/hubot/subscriptions",
+          "organizations_url": "https://api.github.com/users/hubot/orgs",
+          "repos_url": "https://api.github.com/users/hubot/repos",
+          "events_url": "https://api.github.com/users/hubot/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/hubot/received_events",
+          "type": "User",
+          "site_admin": true
+        },
+        "body": "",
+        "state": "APPROVED",
+        "html_url": "https://github.com/octocat/Hello-World/pull/1347#pullrequestreview-253118943",
+        "pull_request_url": "https://api.github.com/repos/nuclear-tests/test-githint/pulls/103",
+        "author_association": "COLLABORATOR",
+        "_links": {
+          "html": {
+            "href": "https://github.com/octocat/Hello-World/pull/1347#pullrequestreview-253118943"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/octocat/Hello-World/pulls/1347"
+          }
+        },
+        "submitted_at": "2019-06-23T07:08:40Z",
+        "commit_id": "d9a65455e72533d5c691c0c298787d603ed4496c"
+      },
+      {
+        "id": 253127810,
+        "node_id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3MjUzMTI3ODEw",
+        "user": {
+          "login": "other_user",
+          "id": 1,
+          "node_id": "MDQ6VXNlcjE=",
+          "avatar_url": "https://github.com/images/error/other_user_happy.gif",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/other_user",
+          "html_url": "https://github.com/other_user",
+          "followers_url": "https://api.github.com/users/other_user/followers",
+          "following_url": "https://api.github.com/users/other_user/following{/other_user}",
+          "gists_url": "https://api.github.com/users/other_user/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/other_user/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/other_user/subscriptions",
+          "organizations_url": "https://api.github.com/users/other_user/orgs",
+          "repos_url": "https://api.github.com/users/other_user/repos",
+          "events_url": "https://api.github.com/users/other_user/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/other_user/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "body": "",
+        "state": "CHANGES_REQUESTED",
+        "html_url": "https://github.com/octocat/Hello-World/pull/1347#pullrequestreview-253127810",
+        "pull_request_url": "https://api.github.com/repos/nuclear-tests/test-githint/pulls/103",
+        "author_association": "COLLABORATOR",
+        "_links": {
+          "html": {
+            "href": "https://github.com/octocat/Hello-World/pull/1347#pullrequestreview-253127810"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/octocat/Hello-World/pulls/1347"
+          }
+        },
+        "submitted_at": "2019-06-23T11:28:43Z",
+        "commit_id": "d9a65455e72533d5c691c0c298787d603ed4496c"
+      }
+    ],
     "head": {
       "label": "octocat:new-topic",
       "ref": "new-topic",
