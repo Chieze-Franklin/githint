@@ -2,6 +2,8 @@
 
 Codebase for [GitHint GitHub app](https://github.com/apps/githint-bot) documentation.
 
+----------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
