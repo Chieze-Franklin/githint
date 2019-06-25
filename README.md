@@ -1,6 +1,6 @@
 ## GitHint
 
-Codebase for [GitHint GitHub app](https://githint.herokuapp.com) documentation.
+Codebase for GitHint [documentation](https://githint.herokuapp.com).
 
 [GitHint](https://github.com/apps/githint-bot) ensures that your pull requests follow specified conventions.
 
