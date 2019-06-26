@@ -35,7 +35,10 @@ function Home(props) {
             </Card.Header>
             <Card.Body>
               <p>
-                {props.appName} ensures that your pull requests follow specified conventions.
+                <a href="https://github.com/apps/githint-bot" target="_blank" rel="noopener noreferrer">
+                  {props.appName}
+                </a>{" "}
+                ensures that your pull requests follow specified conventions.
               </p>
               <p>
                 <img src="../images/screenshots/passing-tests.png" alt="" />
@@ -58,9 +61,9 @@ function Home(props) {
                 {" "}<code>true</code> or <code>false</code> to determine if a pull request is ready to be merged.
               </p>
               <p>
-                To start using {props.appName}, first install the
-                {" "}<a href="https://github.com/apps/githint-bot" target="_blank" rel="noopener noreferrer">
-                  {props.appName} GitHub app
+                To start using {props.appName}, first
+                {" "}<a href="https://github.com/apps/githint-bot/installations/new" target="_blank" rel="noopener noreferrer">
+                  install the {props.appName} GitHub app
                 </a>{" "}
                 on your repository and
                 add a <Link to="/config">{props.appConfig} file</Link> to the root directory of the repository. That's it!

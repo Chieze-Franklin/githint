@@ -23,9 +23,9 @@ function Config(props) {
             </Card.Header>
             <Card.Body>
               <p>
-                To start using {props.appName}, first install the
-                {" "}<a href="https://github.com/apps/githint-bot" target="_blank" rel="noopener noreferrer">
-                  {props.appName} GitHub app
+                To start using {props.appName}, first
+                {" "}<a href="https://github.com/apps/githint-bot/installations/new" target="_blank" rel="noopener noreferrer">
+                  install the {props.appName} GitHub app
                 </a>{" "}
                 on your repository and
                 add a {props.appConfig} file to the root directory of the repository.
