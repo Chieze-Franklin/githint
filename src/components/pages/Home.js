@@ -68,6 +68,10 @@ function Home(props) {
                 on your repository and
                 add a <Link to="/config">{props.appConfig} file</Link> to the root directory of the repository. That's it!
               </p>
+              <p>
+                To see a few sample {props.appConfig} files, click
+                {" "}<a href="https://github.com/Chieze-Franklin/githint-samples">here</a>.
+              </p>
             </Card.Body>
           </Card>
         </Grid.Col>

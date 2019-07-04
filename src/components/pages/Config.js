@@ -72,6 +72,10 @@ function Config(props) {
                 </code>
                 </pre>
               </p>
+              <p>
+                To see a few sample {props.appConfig} files, click
+                {" "}<a href="https://github.com/Chieze-Franklin/githint-samples">here</a>.
+              </p>
             </Card.Body>
           </Card>
         </Grid.Col>
