@@ -163,6 +163,8 @@ function Config(props) {
                 that determines if the check passed or failed<br />
                 <Icon prefix="fe" name="circle" /> <code>message</code> which is the message you
                 want to display to the user at that particular point in time.<br />
+                For instance, you may want to include the name of the user that raised the pull request
+                in the message displayed to them.
                 <pre>
                 <code>
                 {
@@ -173,7 +175,15 @@ function Config(props) {
 			"script": [
 				"let file = commit.files[0].filename",
 				"let editor = commit.commit.author.name",
-				"return (file != '.githint.json' || editor == 'Chieze Franklin');"
+        "let result = (file != '.githint.json' || editor == 'Chieze Franklin');",
+        "if (result === true) {",
+        " return result;",
+        "} else {",
+        " return {",
+        "   result: result,",
+        "   message: \`Hi $\{editor}, the .githint.json file shouldn't be touched; Only Franklin can edit the file.\`",
+        " }",
+        "}"
 			],
 			"message": "The .githint.json file shouldn't be touched; Only Franklin can edit the file."
 		}
