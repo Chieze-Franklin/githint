@@ -159,9 +159,9 @@ function Config(props) {
                 That may not be what you want. You may want to return different messages based on
                 the result of the check. To do this, instead of returning a simple boolean value from
                 your script, you return an object that contains 2 fields:<br />
-                <Icon prefix="fe" name="circle" /> <code>result</code> which is a boolean field
+                <Icon prefix="fe" name="arrow-right-circle" /> <code>result</code> which is a boolean field
                 that determines if the check passed or failed<br />
-                <Icon prefix="fe" name="circle" /> <code>message</code> which is the message you
+                <Icon prefix="fe" name="arrow-right-circle" /> <code>message</code> which is the message you
                 want to display to the user at that particular point in time.<br />
                 For instance, you may want to include the name of the user that raised the pull request
                 in the message displayed to them.
@@ -175,15 +175,15 @@ function Config(props) {
 			"script": [
 				"let file = commit.files[0].filename",
 				"let editor = commit.commit.author.name",
-        "let result = (file != '.githint.json' || editor == 'Chieze Franklin');",
-        "if (result === true) {",
-        " return result;",
-        "} else {",
-        " return {",
-        "   result: result,",
-        "   message: \`Hi $\{editor}, the .githint.json file shouldn't be touched; Only Franklin can edit the file.\`",
-        " }",
-        "}"
+				"let result = (file != '.githint.json' || editor == 'Chieze Franklin');",
+				"if (result === true) {",
+				" return result;",
+				"} else {",
+				" return {",
+				"   result: result,",
+				"   message: \`Hi $\{editor}, the .githint.json file shouldn't be touched; Only Franklin can edit the file.\`",
+				" }",
+				"}"
 			],
 			"message": "The .githint.json file shouldn't be touched; Only Franklin can edit the file."
 		}
