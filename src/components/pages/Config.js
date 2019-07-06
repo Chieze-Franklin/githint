@@ -153,8 +153,7 @@ function Config(props) {
                 </pre>
               </p>
               <p>
-                In the above check <code>Only Franklin can edit the .githint.json file</code>, the
-                message returned to the user is always
+                In the check above, the message returned to the user is always
                 {" "}<code>The .githint.json file shouldn't be touched; Only Franklin can edit the file.</code>{" "}
                 That may not be what you want. You may want to return different messages based on
                 the result of the check. To do this, instead of returning a simple boolean value from
