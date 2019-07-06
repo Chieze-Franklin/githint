@@ -152,11 +152,41 @@ function Config(props) {
                 </code>
                 </pre>
               </p>
+              <p>
+                In the above check <code>Only Franklin can edit the .githint.json file</code>, the
+                message returned to the user is always
+                {" "}<code>The .githint.json file shouldn't be touched; Only Franklin can edit the file.</code>{" "}
+                That may not be what you want. You may want to return different messages based on
+                the result of the check. To do this, instead of returning a simple boolean value from
+                your script, you return an object that contains 2 fields:<br />
+                <Icon prefix="fe" name="circle" /> <code>result</code> which is a boolean field
+                that determines if the check passed or failed<br />
+                <Icon prefix="fe" name="circle" /> <code>message</code> which is the message you
+                want to display to the user at that particular point in time.<br />
+                <pre>
+                <code>
+                {
+`{
+	"checks": {
+		"Only Franklin can edit the .githint.json file": {
+      "skip": false,
+			"script": [
+				"let file = commit.files[0].filename",
+				"let editor = commit.commit.author.name",
+				"return (file != '.githint.json' || editor == 'Chieze Franklin');"
+			],
+			"message": "The .githint.json file shouldn't be touched; Only Franklin can edit the file."
+		}
+	}
+}`
+                }
+                </code>
+                </pre>
+              </p>
             </Card.Body>
           </Card>
         </Grid.Col>
       </Grid.Row>
-      
       <Grid.Row>
         <Grid.Col md={12} xl={12}>
           <Card>
