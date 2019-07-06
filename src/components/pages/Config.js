@@ -138,7 +138,7 @@ function Config(props) {
 `{
 	"checks": {
 		"Only Franklin can edit the .githint.json file": {
-      "skip": false,
+			"skip": false,
 			"script": [
 				"let file = commit.files[0].filename",
 				"let editor = commit.commit.author.name",
@@ -171,7 +171,7 @@ function Config(props) {
 `{
 	"checks": {
 		"Only Franklin can edit the .githint.json file": {
-      "skip": false,
+			"skip": false,
 			"script": [
 				"let file = commit.files[0].filename",
 				"let editor = commit.commit.author.name",
@@ -189,7 +189,7 @@ function Config(props) {
 		}
 	}
 }`
-                }
+			}
                 </code>
                 </pre>
               </p>
