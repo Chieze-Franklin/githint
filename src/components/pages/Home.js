@@ -54,6 +54,14 @@ function Home(props) {
 
   return (<SiteWrapper>
     <Page.Content>
+      {stats.installs ? <Grid.Row>
+        <Grid.Col width={6} sm={4} lg={2}>
+          <StatsCard layout={1} movement={0} total={stats.installs} label="Installations" />
+        </Grid.Col>
+        <Grid.Col width={6} sm={4} lg={2}>
+          <StatsCard layout={1} movement={0} total={stats.repos} label="Repositories" />
+        </Grid.Col>
+      </Grid.Row> : <React.Fragment></React.Fragment>}
       <Grid.Row>
         <Grid.Col md={12} xl={12}>
           <Card>
@@ -103,14 +111,6 @@ function Home(props) {
           </Card>
         </Grid.Col>
       </Grid.Row>
-      {stats.installs ? <Grid.Row>
-        <Grid.Col width={6} sm={4} lg={2}>
-          <StatsCard layout={1} movement={0} total={stats.installs} label="Installations" />
-        </Grid.Col>
-        <Grid.Col width={6} sm={4} lg={2}>
-          <StatsCard layout={1} movement={0} total={stats.repos} label="Repositories" />
-        </Grid.Col>
-      </Grid.Row> : <React.Fragment></React.Fragment>}
     </Page.Content>
   </SiteWrapper>);
 }
