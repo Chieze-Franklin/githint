@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+
+import request from 'request-promise-native';
 
 import { connect } from '../../context-api-redux';
 
@@ -19,12 +21,37 @@ import {
   // Dropdown,
   // Button,
   // StampCard,
-  // StatsCard,
+  StatsCard,
   // ProgressCard,
   // Badge,
 } from "tabler-react";
 
 function Home(props) {
+  const [stats, setStats] = useState({
+    installs: 0,
+    repos: 0
+  });
+  useEffect(() => {
+    async function fetchStats() {
+      if (!stats.installs) {
+        const response = await request({
+          url: `https://githint-bot.herokuapp.com/api/stats`,
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          resolveWithFullResponse: true,
+        });
+        const body = JSON.parse(response.body);
+        setStats({
+          installs: body.data.installs,
+          repos: body.data.repos
+        })
+      }
+    }
+    fetchStats();
+  });
+
   return (<SiteWrapper>
     <Page.Content>
       <Grid.Row>
@@ -76,6 +103,14 @@ function Home(props) {
           </Card>
         </Grid.Col>
       </Grid.Row>
+      {stats.installs ? <Grid.Row>
+        <Grid.Col width={6} sm={4} lg={2}>
+          <StatsCard layout={1} movement={0} total={stats.installs} label="Installations" />
+        </Grid.Col>
+        <Grid.Col width={6} sm={4} lg={2}>
+          <StatsCard layout={1} movement={0} total={stats.repos} label="Repositories" />
+        </Grid.Col>
+      </Grid.Row> : <React.Fragment></React.Fragment>}
     </Page.Content>
   </SiteWrapper>);
 }
