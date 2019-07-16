@@ -8151,7 +8151,7 @@ react-scripts@3.0.1:
   optionalDependencies:
     fsevents "2.0.6"
 
-react-simple-tree-menu@^1.1.1:
+react-simple-tree-menu@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/react-simple-tree-menu/-/react-simple-tree-menu-1.1.4.tgz#9d06bec7e0e9f38d60e2d10982e3756fc2e80c4f"
   integrity sha512-Zt3jBxFYkmHAS/LlMjcAWjtUT/rXN7vbX1MdTMdEnhVoViRxqPqtrS7lZwcitdHN9U2XlD4mVBHk70r9noA74w==
