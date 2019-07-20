@@ -10,6 +10,7 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-simple-tree-menu": "^1.1.4",
+    "react-virtualized-tree": "^3.2.3",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7",
     "tabler-react": "^1.30.1"
