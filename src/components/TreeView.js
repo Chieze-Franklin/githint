@@ -4,7 +4,7 @@ import TreeMenu from 'react-simple-tree-menu';
 import 'react-virtualized/styles.css'
 import 'react-virtualized-tree/lib/main.css'
 
-import Tree, { FilteringContainer } from 'react-virtualized-tree'
+// import Tree, { FilteringContainer } from 'react-virtualized-tree'
 
 const keyStyle = {
   color: 'blue'
