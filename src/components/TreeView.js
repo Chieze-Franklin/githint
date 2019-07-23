@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import TreeMenu from 'react-simple-tree-menu';
 
-import TreeView2 from 'devextreme-react/tree-view';
-import SelectBox from 'devextreme-react/select-box';
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.css';
+
+import Tree from 'devextreme-react/tree-view';
 
 const products = [{
   id: '1',
@@ -307,24 +308,13 @@ function TreeView(props) {
   //   />);
   return (
     <React.Fragment>
-      <TreeView2
+      <Tree
         id={'treeview'}
         items={products}
         width={500}
         searchMode={searchMode}
         searchEnabled={true}
       />
-      <div className={'options'}>
-        <div className={'caption'}>Options</div>
-        <div className={'option'}>
-          <span>Search mode</span>
-          <SelectBox
-            items={['contains', 'startswith']}
-            value={searchMode}
-            onValueChanged={(e) => {setSearchMode(e.value)}}
-          />)
-        </div>
-      </div>
     </React.Fragment>
   );
 }
