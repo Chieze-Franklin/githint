@@ -50,6 +50,10 @@ function TreeView(props) {
         itemTemplate={template}
         keyExpr={'key'}
         noDataText={'No field found matching the search term.'}
+        searchEditorOptions={{
+          hint: props.hint,
+          placeholder: props.placeholder
+        }}
         searchEnabled={true}
         searchExpr={['key']}
         searchMode={'contains'}

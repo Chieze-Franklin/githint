@@ -10,20 +10,15 @@ import {
 } from 'tabler-react';
 
 function Directory(props) {
+  const hint = `You can browse through the '${props.object}' object by searching ` +
+    `for ${props.object}.{field}.{innerField}...\n` +
+    `For instance: ${props.object}${props.object === "branch" ? ".name" : ".url"}`;
+  const placeholder = `Browse the '${props.object}' object`;
   return (<SiteWrapper>
     <Page.Content>
       <Grid.Row>
         <Grid.Col md={12} xl={12}>
-          <p>
-            You can browse through the <code>{props.object}</code> object by searching
-            for <code>{props.object}{".{field}.{innerField}..."}</code><br />
-            For instance: <code>{props.object}{props.object === "branch" ? ".name" : ".url"}</code>
-          </p>
-        </Grid.Col>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Col md={12} xl={12}>
-          <TreeView data={treeData[props.object]} />
+          <TreeView data={treeData[props.object]} hint={hint} placeholder={placeholder} />
         </Grid.Col>
       </Grid.Row>
     </Page.Content>
