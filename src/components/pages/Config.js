@@ -231,7 +231,7 @@ function Config(props) {
         </Grid.Col>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Col xs={12} sm={12} md={6} lg={6} xl={3}>
+        <Grid.Col xl={3} lg={6} md={12} sm={12} xs={12}>
           <Card>
             <Card.Header>
               <Card.Title>branch</Card.Title>
@@ -254,7 +254,7 @@ function Config(props) {
             </Card.Body>
           </Card>
         </Grid.Col>
-        <Grid.Col xs={12} sm={12} md={6} lg={6} xl={3}>
+        <Grid.Col xl={3} lg={6} md={12} sm={12} xs={12}>
           <Card>
             <Card.Header>
               <Card.Title>commit</Card.Title>
@@ -277,7 +277,7 @@ function Config(props) {
             </Card.Body>
           </Card>
         </Grid.Col>
-        <Grid.Col xs={12} sm={12} md={6} lg={6} xl={3}>
+        <Grid.Col xl={3} lg={6} md={12} sm={12} xs={12}>
           <Card>
             <Card.Header>
               <Card.Title>pull</Card.Title>
@@ -306,7 +306,7 @@ function Config(props) {
             </Card.Body>
           </Card>
         </Grid.Col>
-        <Grid.Col xs={12} sm={12} md={6} lg={6} xl={3}>
+        <Grid.Col xl={3} lg={6} md={12} sm={12} xs={12}>
           <Card>
             <Card.Header>
               <Card.Title>tree</Card.Title>
