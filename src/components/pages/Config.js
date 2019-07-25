@@ -130,7 +130,7 @@ function Config(props) {
                 above. The <code>message</code> field (which can also be either a <code>String</code> or
                 a <code>String Array</code>) holds the message to be shown to the user
                 (irrespective of the outcome of the check). The <code>skip</code> (<code>false</code> by
-                default), when set to <code>true</code>, will force make that check to be skipped.<br />
+                default), when set to <code>true</code>, will make that check to be skipped.<br />
                 Example:
                 <pre>
                 <code>
@@ -191,6 +191,144 @@ function Config(props) {
 			}
                 </code>
                 </pre>
+              </p>
+            </Card.Body>
+          </Card>
+        </Grid.Col>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Col md={12} xl={12}>
+          <Card>
+            <Card.Header>
+              <Card.Title>Skipping checks</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              <p>
+                As stated above, you can skip a particular check by setting its <code>skip</code>
+                {" "}(<code>false</code> by default) field to <code>true</code>.
+
+                <pre>
+                <code>
+                {
+`{
+	"checks": {
+		"Only Franklin can edit the .githint.json file": {
+			"skip": false,
+			"script": [
+				"let file = commit.files[0].filename",
+				"let editor = commit.commit.author.name",
+				"return (file != '.githint.json' || editor == 'Chieze Franklin');"
+			],
+			"message": "The .githint.json file shouldn't be touched; Only Franklin can edit the file."
+		}
+	}
+}`
+                }
+                </code>
+                </pre>
+              </p>
+              <p>
+                To skip all checks set <code>skip</code> to <code>true</code> in
+                the <code>options</code> object.
+                <pre>
+                <code>
+                {
+`{
+	"options": {
+		"skip": true
+	},
+	"checks": {
+		"Only Franklin can edit the .githint.json file": {
+			"skip": false,
+			"script": [
+				"let file = commit.files[0].filename",
+				"let editor = commit.commit.author.name",
+				"return (file != '.githint.json' || editor == 'Chieze Franklin');"
+			],
+			"message": "The .githint.json file shouldn't be touched; Only Franklin can edit the file."
+		},
+		".gitignore": {
+			"script": "!!(tree.tree.find(t => t.path === '.gitignore'))",
+			"message": [
+				"The repository must contain a .gitignore file"
+			]
+		}
+	}
+}`
+                }
+                </code>
+                </pre>
+              </p>
+              <p>
+                You can override the <i>global</i> <code>skip</code> option in a check by
+                setting <code>skip</code> in that check to a desired value.
+                <pre>
+                <code>
+                {
+`{
+	"options": {
+		"skip": true
+	},
+	"checks": {
+		"Only Franklin can edit the .githint.json file": {
+			"skip": false,
+			"script": [
+				"let file = commit.files[0].filename",
+				"let editor = commit.commit.author.name",
+				"return (file != '.githint.json' || editor == 'Chieze Franklin');"
+			],
+			"message": "The .githint.json file shouldn't be touched; Only Franklin can edit the file."
+		},
+		".gitignore": {
+			"script": "!!(tree.tree.find(t => t.path === '.gitignore'))",
+			"message": [
+				"The repository must contain a .gitignore file"
+			]
+		}
+	}
+}`
+                }
+                </code>
+                </pre>
+                From the above all checks will be skipped except <em>Only Franklin can edit the .githint.json file</em>.
+              </p>
+              <p>
+                Note that <code>skip</code> doesn't have to be a <code>Boolean</code> field;
+                it can be a <code>String</code> field which holds a JavaScript code snippet that
+                evaluates to <code>true</code> or <code>false</code>. This helps us skip checks conditionally.
+                For instance, we may want to skip all checks when the commit is made by the
+                {" "}<a href="https://greenkeeper.io/">GreenKeeper bot</a>:
+                <pre>
+                <code>
+                {
+`{
+	"options": {
+		"skip": "commit.author.login.toLowerCase() === 'greenkeeper[bot]'"
+	},
+	"checks": {
+		"Only Franklin can edit the .githint.json file": {
+			"script": [
+				"let file = commit.files[0].filename",
+				"let editor = commit.commit.author.name",
+				"return (file != '.githint.json' || editor == 'Chieze Franklin');"
+			],
+			"message": "The .githint.json file shouldn't be touched; Only Franklin can edit the file."
+		},
+		".gitignore": {
+			"script": "!!(tree.tree.find(t => t.path === '.gitignore'))",
+			"message": [
+				"The repository must contain a .gitignore file"
+			]
+		}
+	}
+}`
+                }
+                </code>
+                </pre>
+              </p>
+              <p>
+                The code snippets for the <code>skip</code> have access to the following (runtime-generated) objects:
+                {" "}<code>branch</code>, <code>commit</code>, <code>pull</code>, <code>tree</code>.
               </p>
             </Card.Body>
           </Card>
