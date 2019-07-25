@@ -200,6 +200,40 @@ function Config(props) {
         <Grid.Col md={12} xl={12}>
           <Card>
             <Card.Header>
+              <Card.Title>Code execution</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              <p>
+                The code snippets for the checks are executed as Node-compatible JavaScript source code.
+              </p>
+              <p>
+                Before execution of the checks, {props.appName} ensures it can find the {props.appConfig} file
+                in the root directory of the repository.
+                If the {props.appConfig} file cannot be found or successfully read, the built-in check
+                {" "}<code>GitHint: check for {props.appConfig} file</code> will fail.<br />
+                If this happens ensure the {props.appConfig} file exists and is a valid JSON document.
+              </p>
+              <p>
+                {props.appName} also ensures a pull request has been created. Due to the fact that GitHub
+                starts running check suites once a commit is made to a repository (even before a pull request
+                is created), there may be no pull request when the checks are executed. If no pull request can
+                be found the built-in check <code>GitHint: check for pull request</code> will fail.<br />
+                If this happens simply <em>re-run</em> the failed check.<br />
+                For more info on this issue and how to handle it, see
+                {" "}<a href="https://github.com/Chieze-Franklin/githint-bot/issues/11">here</a>.
+              </p>
+              <p>
+                The code snippets for the checks have access to the following (runtime-generated) objects:
+                {" "}<code>branch</code>, <code>commit</code>, <code>pull</code>, <code>tree</code>.
+              </p>
+            </Card.Body>
+          </Card>
+        </Grid.Col>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Col md={12} xl={12}>
+          <Card>
+            <Card.Header>
               <Card.Title>Skipping checks</Card.Title>
             </Card.Header>
             <Card.Body>
@@ -213,7 +247,7 @@ function Config(props) {
 `{
 	"checks": {
 		"Only Franklin can edit the .githint.json file": {
-			"skip": false,
+			"skip": true,
 			"script": [
 				"let file = commit.files[0].filename",
 				"let editor = commit.commit.author.name",
@@ -236,23 +270,6 @@ function Config(props) {
 `{
 	"options": {
 		"skip": true
-	},
-	"checks": {
-		"Only Franklin can edit the .githint.json file": {
-			"skip": false,
-			"script": [
-				"let file = commit.files[0].filename",
-				"let editor = commit.commit.author.name",
-				"return (file != '.githint.json' || editor == 'Chieze Franklin');"
-			],
-			"message": "The .githint.json file shouldn't be touched; Only Franklin can edit the file."
-		},
-		".gitignore": {
-			"script": "!!(tree.tree.find(t => t.path === '.gitignore'))",
-			"message": [
-				"The repository must contain a .gitignore file"
-			]
-		}
 	}
 }`
                 }
@@ -290,36 +307,20 @@ function Config(props) {
                 }
                 </code>
                 </pre>
-                From the above all checks will be skipped except <em>Only Franklin can edit the .githint.json file</em>.
+                From the above all checks will be skipped except <code>Only Franklin can edit the .githint.json file</code>.
               </p>
               <p>
                 Note that <code>skip</code> doesn't have to be a <code>Boolean</code> field;
                 it can be a <code>String</code> field which holds a JavaScript code snippet that
                 evaluates to <code>true</code> or <code>false</code>. This helps us skip checks conditionally.
                 For instance, we may want to skip all checks when the commit is made by the
-                {" "}<a href="https://greenkeeper.io/">GreenKeeper bot</a>:
+                {" "}<a href="https://greenkeeper.io/" target="_blank" rel="noopener noreferrer">GreenKeeper bot</a>:
                 <pre>
                 <code>
                 {
 `{
 	"options": {
 		"skip": "commit.author.login.toLowerCase() === 'greenkeeper[bot]'"
-	},
-	"checks": {
-		"Only Franklin can edit the .githint.json file": {
-			"script": [
-				"let file = commit.files[0].filename",
-				"let editor = commit.commit.author.name",
-				"return (file != '.githint.json' || editor == 'Chieze Franklin');"
-			],
-			"message": "The .githint.json file shouldn't be touched; Only Franklin can edit the file."
-		},
-		".gitignore": {
-			"script": "!!(tree.tree.find(t => t.path === '.gitignore'))",
-			"message": [
-				"The repository must contain a .gitignore file"
-			]
-		}
 	}
 }`
                 }
@@ -327,7 +328,7 @@ function Config(props) {
                 </pre>
               </p>
               <p>
-                The code snippets for the <code>skip</code> have access to the following (runtime-generated) objects:
+                The code snippet for <code>skip</code> has access to the following (runtime-generated) objects:
                 {" "}<code>branch</code>, <code>commit</code>, <code>pull</code>, <code>tree</code>.
               </p>
             </Card.Body>
@@ -338,31 +339,60 @@ function Config(props) {
         <Grid.Col md={12} xl={12}>
           <Card>
             <Card.Header>
-              <Card.Title>Code execution</Card.Title>
+              <Card.Title>Detecting pull requests</Card.Title>
             </Card.Header>
             <Card.Body>
               <p>
-                The code snippets for the checks are executed as Node-compatible JavaScript source code.
-              </p>
-              <p>
-                Before execution of the checks, {props.appName} ensures it can find the {props.appConfig} file
-                in the root directory of the repository.
-                If the {props.appConfig} file cannot be found or successfully read, the built-in check
-                {" "}<code>GitHint: check for {props.appConfig} file</code> will fail.<br />
-                If this happens ensure the {props.appConfig} file exists and is a valid JSON document.
-              </p>
-              <p>
-                {props.appName} also ensures a pull request has been created. Due to the fact that GitHub
-                starts running check suites once a commit is made to a repository (even before a pull request
-                is created), there may be no pull request when the checks are executed. If no pull request can
-                be found the built-in check <code>GitHint: check for pull request</code> will fail.<br />
-                If this happens simply <em>re-run</em> the failed check.<br />
-                For more info on this issue and how to handle it, see
+                GitHub may run checks before a pull request is created. This may lead to issues
+                if your checks rely on the pull request object <code>pull</code> which may be
+                {" "}<code>undefined</code> at that time. For more info see
                 {" "}<a href="https://github.com/Chieze-Franklin/githint-bot/issues/11">here</a>.
               </p>
               <p>
-                The code snippets for the checks have access to the following (runtime-generated) objects:
-                {" "}<code>branch</code>, <code>commit</code>, <code>pull</code>, <code>tree</code>.
+                To instruct {props.appName} to run your checks only if the <code>pull</code> object exists
+                set <code>detectPull</code> to <code>true</code> in the <code>options</code> object.
+                <pre>
+                <code>
+                {
+`{
+	"options": {
+		"detectPull": true
+	}
+}`
+                }
+                </code>
+                </pre>
+              </p>
+              <p>
+                If none of your checks requires the <code>pull</code> object to exist
+                {" "}(or if you handle the fact that <code>pull</code> may be <code>undefined</code> explicitly
+                in your checks), you can prevent the <code>GitHint: check for pull request</code> check from
+                running by setting <code>detectPull</code> to <code>false</code> or leaving it out completely.
+              </p>
+              <p>
+                Just like <code>skip</code> described above, <code>detectPull</code> can be
+                a <code>String</code> field which holds a JavaScript code snippet that
+                evaluates to <code>true</code> or <code>false</code>. This helps us check for the
+                existence of pull requests conditionally.
+                For instance, we may want to skip the check for pull request when the commit is made by the
+                {" "}<a href="https://greenkeeper.io/" target="_blank" rel="noopener noreferrer">GreenKeeper bot</a>:
+                <pre>
+                <code>
+                {
+`{
+	"options": {
+		"detectPull": "commit.author.login.toLowerCase() !== 'greenkeeper[bot]'"
+	}
+}`
+                }
+                </code>
+                </pre>
+              </p>
+              <p>
+                The code snippet for <code>detectPull</code> has access to the following (runtime-generated) objects:
+                {" "}<code>branch</code>, <code>commit</code>, <code>tree</code>. (Notice that it does <b>not</b> have
+                access to the <code>pull</code> object as <code>pull</code> is most likely <code>undefined</code> at
+                this time.)
               </p>
             </Card.Body>
           </Card>
