@@ -130,7 +130,7 @@ function Config(props) {
                 above. The <code>message</code> field (which can also be either a <code>String</code> or
                 a <code>String Array</code>) holds the message to be shown to the user
                 (irrespective of the outcome of the check). The <code>skip</code> (<code>false</code> by
-                default), when set to <code>true</code>, will force make that check to be skipped.<br />
+                default), when set to <code>true</code>, will make that check to be skipped.<br />
                 Example:
                 <pre>
                 <code>
@@ -231,7 +231,175 @@ function Config(props) {
         </Grid.Col>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Col xs={12} sm={12} md={6} lg={6} xl={3}>
+        <Grid.Col md={12} xl={12}>
+          <Card>
+            <Card.Header>
+              <Card.Title>Skipping checks</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              <p>
+                As stated above, you can skip a particular check by setting its <code>skip</code>
+                {" "}(<code>false</code> by default) field to <code>true</code>.
+
+                <pre>
+                <code>
+                {
+`{
+	"checks": {
+		"Only Franklin can edit the .githint.json file": {
+			"skip": true,
+			"script": [
+				"let file = commit.files[0].filename",
+				"let editor = commit.commit.author.name",
+				"return (file != '.githint.json' || editor == 'Chieze Franklin');"
+			],
+			"message": "The .githint.json file shouldn't be touched; Only Franklin can edit the file."
+		}
+	}
+}`
+                }
+                </code>
+                </pre>
+              </p>
+              <p>
+                To skip all checks set <code>skip</code> to <code>true</code> in
+                the <code>options</code> object.
+                <pre>
+                <code>
+                {
+`{
+	"options": {
+		"skip": true
+	}
+}`
+                }
+                </code>
+                </pre>
+              </p>
+              <p>
+                You can override the <i>global</i> <code>skip</code> option in a check by
+                setting <code>skip</code> in that check to a desired value.
+                <pre>
+                <code>
+                {
+`{
+	"options": {
+		"skip": true
+	},
+	"checks": {
+		"Only Franklin can edit the .githint.json file": {
+			"skip": false,
+			"script": [
+				"let file = commit.files[0].filename",
+				"let editor = commit.commit.author.name",
+				"return (file != '.githint.json' || editor == 'Chieze Franklin');"
+			],
+			"message": "The .githint.json file shouldn't be touched; Only Franklin can edit the file."
+		},
+		".gitignore": {
+			"script": "!!(tree.tree.find(t => t.path === '.gitignore'))",
+			"message": [
+				"The repository must contain a .gitignore file"
+			]
+		}
+	}
+}`
+                }
+                </code>
+                </pre>
+                From the above all checks will be skipped except <code>Only Franklin can edit the .githint.json file</code>.
+              </p>
+              <p>
+                Note that <code>skip</code> doesn't have to be a <code>Boolean</code> field;
+                it can be a <code>String</code> field which holds a JavaScript code snippet that
+                evaluates to <code>true</code> or <code>false</code>. This helps us skip checks conditionally.
+                For instance, we may want to skip all checks when the commit is made by the
+                {" "}<a href="https://greenkeeper.io/" target="_blank" rel="noopener noreferrer">GreenKeeper bot</a>:
+                <pre>
+                <code>
+                {
+`{
+	"options": {
+		"skip": "commit.author.login.toLowerCase() === 'greenkeeper[bot]'"
+	}
+}`
+                }
+                </code>
+                </pre>
+              </p>
+              <p>
+                The code snippet for <code>skip</code> has access to the following (runtime-generated) objects:
+                {" "}<code>branch</code>, <code>commit</code>, <code>pull</code>, <code>tree</code>.
+              </p>
+            </Card.Body>
+          </Card>
+        </Grid.Col>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Col md={12} xl={12}>
+          <Card>
+            <Card.Header>
+              <Card.Title>Detecting pull requests</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              <p>
+                GitHub may run checks before a pull request is created. This may lead to issues
+                if your checks rely on the pull request object <code>pull</code> which may be
+                {" "}<code>undefined</code> at that time. For more info see
+                {" "}<a href="https://github.com/Chieze-Franklin/githint-bot/issues/11">here</a>.
+              </p>
+              <p>
+                To instruct {props.appName} to run your checks only if the <code>pull</code> object exists
+                set <code>detectPull</code> to <code>true</code> in the <code>options</code> object.
+                <pre>
+                <code>
+                {
+`{
+	"options": {
+		"detectPull": true
+	}
+}`
+                }
+                </code>
+                </pre>
+              </p>
+              <p>
+                If none of your checks requires the <code>pull</code> object to exist
+                {" "}(or if you handle the fact that <code>pull</code> may be <code>undefined</code> explicitly
+                in your checks), you can prevent the <code>GitHint: check for pull request</code> check from
+                running by setting <code>detectPull</code> to <code>false</code> or leaving it out completely.
+              </p>
+              <p>
+                Just like <code>skip</code> described above, <code>detectPull</code> can be
+                a <code>String</code> field which holds a JavaScript code snippet that
+                evaluates to <code>true</code> or <code>false</code>. This helps us check for the
+                existence of pull requests conditionally.
+                For instance, we may want to skip the check for pull request when the commit is made by the
+                {" "}<a href="https://greenkeeper.io/" target="_blank" rel="noopener noreferrer">GreenKeeper bot</a>:
+                <pre>
+                <code>
+                {
+`{
+	"options": {
+		"detectPull": "commit.author.login.toLowerCase() !== 'greenkeeper[bot]'"
+	}
+}`
+                }
+                </code>
+                </pre>
+              </p>
+              <p>
+                The code snippet for <code>detectPull</code> has access to the following (runtime-generated) objects:
+                {" "}<code>branch</code>, <code>commit</code>, <code>tree</code>. (Notice that it does <b>not</b> have
+                access to the <code>pull</code> object as <code>pull</code> is most likely <code>undefined</code> at
+                this time.)
+              </p>
+            </Card.Body>
+          </Card>
+        </Grid.Col>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Col xl={3} lg={6} md={12} sm={12} xs={12}>
           <Card>
             <Card.Header>
               <Card.Title>branch</Card.Title>
@@ -254,7 +422,7 @@ function Config(props) {
             </Card.Body>
           </Card>
         </Grid.Col>
-        <Grid.Col xs={12} sm={12} md={6} lg={6} xl={3}>
+        <Grid.Col xl={3} lg={6} md={12} sm={12} xs={12}>
           <Card>
             <Card.Header>
               <Card.Title>commit</Card.Title>
@@ -277,7 +445,7 @@ function Config(props) {
             </Card.Body>
           </Card>
         </Grid.Col>
-        <Grid.Col xs={12} sm={12} md={6} lg={6} xl={3}>
+        <Grid.Col xl={3} lg={6} md={12} sm={12} xs={12}>
           <Card>
             <Card.Header>
               <Card.Title>pull</Card.Title>
@@ -306,7 +474,7 @@ function Config(props) {
             </Card.Body>
           </Card>
         </Grid.Col>
-        <Grid.Col xs={12} sm={12} md={6} lg={6} xl={3}>
+        <Grid.Col xl={3} lg={6} md={12} sm={12} xs={12}>
           <Card>
             <Card.Header>
               <Card.Title>tree</Card.Title>
