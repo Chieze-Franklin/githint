@@ -6,7 +6,7 @@
     "babel-loader": "8.0.5",
     "devextreme": "^19.1.4",
     "devextreme-react": "^19.1.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
